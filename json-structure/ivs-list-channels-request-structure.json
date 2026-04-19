@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-list-channels-request-structure.json",
+  "name": "ListChannelsRequest",
+  "description": "ListChannelsRequest schema",
+  "type": "object",
+  "properties": {
+    "filterByName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChannelName"
+        },
+        {
+          "description": "Filters the channel list to match the specified name."
+        }
+      ]
+    },
+    "filterByRecordingConfigurationArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChannelRecordingConfigurationArn"
+        },
+        {
+          "description": "Filters the channel list to match the specified recording-configuration ARN."
+        }
+      ]
+    },
+    "maxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxChannelResults"
+        },
+        {
+          "description": "Maximum number of channels to return. Default: 100."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-list-stream-sessions-response-schema.json",
+  "title": "ListStreamSessionsResponse",
+  "description": "ListStreamSessionsResponse schema",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set."
+        }
+      ]
+    },
+    "streamSessions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamSessionList"
+        },
+        {
+          "description": "List of stream sessions."
+        }
+      ]
+    }
+  },
+  "required": [
+    "streamSessions"
+  ]
+}

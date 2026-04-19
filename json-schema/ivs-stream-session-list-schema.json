@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-stream-session-list-schema.json",
+  "title": "StreamSessionList",
+  "description": "StreamSessionList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "endTime": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Time"
+          },
+          {
+            "description": "Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>."
+          }
+        ]
+      },
+      "hasErrorEvent": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Boolean"
+          },
+          {
+            "description": "If <code>true</code>, this stream encountered a quota breach or failure."
+          }
+        ]
+      },
+      "startTime": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Time"
+          },
+          {
+            "description": "Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>."
+          }
+        ]
+      },
+      "streamId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StreamId"
+          },
+          {
+            "description": "Unique identifier for a live or previously live stream in the specified channel."
+          }
+        ]
+      }
+    },
+    "description": "Summary information about a stream session."
+  }
+}

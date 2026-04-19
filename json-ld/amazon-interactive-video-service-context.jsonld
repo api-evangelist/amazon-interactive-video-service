@@ -1,0 +1,379 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "amzn": "https://amazonaws.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "AudioConfiguration": "amzn:AudioConfiguration",
+    "BatchError": "amzn:BatchError",
+    "BatchGetChannelRequest": "amzn:BatchGetChannelRequest",
+    "BatchGetChannelResponse": "amzn:BatchGetChannelResponse",
+    "BatchGetStreamKeyRequest": "amzn:BatchGetStreamKeyRequest",
+    "BatchGetStreamKeyResponse": "amzn:BatchGetStreamKeyResponse",
+    "BatchStartViewerSessionRevocationError": "amzn:BatchStartViewerSessionRevocationError",
+    "BatchStartViewerSessionRevocationRequest": "amzn:BatchStartViewerSessionRevocationRequest",
+    "BatchStartViewerSessionRevocationResponse": "amzn:BatchStartViewerSessionRevocationResponse",
+    "BatchStartViewerSessionRevocationViewerSession": "amzn:BatchStartViewerSessionRevocationViewerSession",
+    "Channel": "amzn:Channel",
+    "ChannelSummary": "amzn:ChannelSummary",
+    "CreateChannelRequest": "amzn:CreateChannelRequest",
+    "CreateChannelResponse": "amzn:CreateChannelResponse",
+    "CreateRecordingConfigurationRequest": "amzn:CreateRecordingConfigurationRequest",
+    "CreateRecordingConfigurationResponse": "amzn:CreateRecordingConfigurationResponse",
+    "CreateStreamKeyRequest": "amzn:CreateStreamKeyRequest",
+    "CreateStreamKeyResponse": "amzn:CreateStreamKeyResponse",
+    "DeleteChannelRequest": "amzn:DeleteChannelRequest",
+    "DeletePlaybackKeyPairRequest": "amzn:DeletePlaybackKeyPairRequest",
+    "DeletePlaybackKeyPairResponse": "amzn:DeletePlaybackKeyPairResponse",
+    "DeleteRecordingConfigurationRequest": "amzn:DeleteRecordingConfigurationRequest",
+    "DeleteStreamKeyRequest": "amzn:DeleteStreamKeyRequest",
+    "DestinationConfiguration": "amzn:DestinationConfiguration",
+    "GetChannelRequest": "amzn:GetChannelRequest",
+    "GetChannelResponse": "amzn:GetChannelResponse",
+    "GetPlaybackKeyPairRequest": "amzn:GetPlaybackKeyPairRequest",
+    "GetPlaybackKeyPairResponse": "amzn:GetPlaybackKeyPairResponse",
+    "GetRecordingConfigurationRequest": "amzn:GetRecordingConfigurationRequest",
+    "GetRecordingConfigurationResponse": "amzn:GetRecordingConfigurationResponse",
+    "GetStreamKeyRequest": "amzn:GetStreamKeyRequest",
+    "GetStreamKeyResponse": "amzn:GetStreamKeyResponse",
+    "GetStreamRequest": "amzn:GetStreamRequest",
+    "GetStreamResponse": "amzn:GetStreamResponse",
+    "GetStreamSessionRequest": "amzn:GetStreamSessionRequest",
+    "GetStreamSessionResponse": "amzn:GetStreamSessionResponse",
+    "ImportPlaybackKeyPairRequest": "amzn:ImportPlaybackKeyPairRequest",
+    "ImportPlaybackKeyPairResponse": "amzn:ImportPlaybackKeyPairResponse",
+    "IngestConfiguration": "amzn:IngestConfiguration",
+    "ListChannelsRequest": "amzn:ListChannelsRequest",
+    "ListChannelsResponse": "amzn:ListChannelsResponse",
+    "ListPlaybackKeyPairsRequest": "amzn:ListPlaybackKeyPairsRequest",
+    "ListPlaybackKeyPairsResponse": "amzn:ListPlaybackKeyPairsResponse",
+    "ListRecordingConfigurationsRequest": "amzn:ListRecordingConfigurationsRequest",
+    "ListRecordingConfigurationsResponse": "amzn:ListRecordingConfigurationsResponse",
+    "ListStreamKeysRequest": "amzn:ListStreamKeysRequest",
+    "ListStreamKeysResponse": "amzn:ListStreamKeysResponse",
+    "ListStreamSessionsRequest": "amzn:ListStreamSessionsRequest",
+    "ListStreamSessionsResponse": "amzn:ListStreamSessionsResponse",
+    "ListStreamsRequest": "amzn:ListStreamsRequest",
+    "ListStreamsResponse": "amzn:ListStreamsResponse",
+    "ListTagsForResourceRequest": "amzn:ListTagsForResourceRequest",
+    "ListTagsForResourceResponse": "amzn:ListTagsForResourceResponse",
+    "PlaybackKeyPair": "amzn:PlaybackKeyPair",
+    "PlaybackKeyPairSummary": "amzn:PlaybackKeyPairSummary",
+    "PutMetadataRequest": "amzn:PutMetadataRequest",
+    "RecordingConfiguration": "amzn:RecordingConfiguration",
+    "RecordingConfigurationSummary": "amzn:RecordingConfigurationSummary",
+    "RenditionConfiguration": "amzn:RenditionConfiguration",
+    "S3DestinationConfiguration": "amzn:S3DestinationConfiguration",
+    "StartViewerSessionRevocationRequest": "amzn:StartViewerSessionRevocationRequest",
+    "StartViewerSessionRevocationResponse": "amzn:StartViewerSessionRevocationResponse",
+    "StopStreamRequest": "amzn:StopStreamRequest",
+    "StopStreamResponse": "amzn:StopStreamResponse",
+    "Stream": "amzn:Stream",
+    "StreamEvent": "amzn:StreamEvent",
+    "StreamFilters": "amzn:StreamFilters",
+    "StreamKey": "amzn:StreamKey",
+    "StreamKeySummary": "amzn:StreamKeySummary",
+    "StreamSession": "amzn:StreamSession",
+    "StreamSessionSummary": "amzn:StreamSessionSummary",
+    "StreamSummary": "amzn:StreamSummary",
+    "TagResourceRequest": "amzn:TagResourceRequest",
+    "TagResourceResponse": "amzn:TagResourceResponse",
+    "Tags": "amzn:Tags",
+    "ThumbnailConfiguration": "amzn:ThumbnailConfiguration",
+    "UntagResourceRequest": "amzn:UntagResourceRequest",
+    "UntagResourceResponse": "amzn:UntagResourceResponse",
+    "UpdateChannelRequest": "amzn:UpdateChannelRequest",
+    "UpdateChannelResponse": "amzn:UpdateChannelResponse",
+    "VideoConfiguration": "amzn:VideoConfiguration",
+    "arn": {
+      "@id": "amzn:arn",
+      "@type": "xsd:string"
+    },
+    "arns": {
+      "@id": "amzn:arns",
+      "@type": "xsd:string"
+    },
+    "audio": {
+      "@id": "amzn:audio",
+      "@type": "xsd:string"
+    },
+    "authorized": {
+      "@id": "amzn:authorized",
+      "@type": "xsd:string"
+    },
+    "avcLevel": {
+      "@id": "amzn:avcLevel",
+      "@type": "xsd:string"
+    },
+    "avcProfile": {
+      "@id": "amzn:avcProfile",
+      "@type": "xsd:string"
+    },
+    "bucketName": {
+      "@id": "amzn:bucketName",
+      "@type": "xsd:string"
+    },
+    "channel": {
+      "@id": "amzn:channel",
+      "@type": "xsd:string"
+    },
+    "channelArn": {
+      "@id": "amzn:channelArn",
+      "@type": "xsd:string"
+    },
+    "channels": {
+      "@id": "amzn:channels",
+      "@type": "xsd:string"
+    },
+    "code": {
+      "@id": "amzn:code",
+      "@type": "xsd:string"
+    },
+    "codec": {
+      "@id": "amzn:codec",
+      "@type": "xsd:string"
+    },
+    "destinationConfiguration": {
+      "@id": "amzn:destinationConfiguration",
+      "@type": "xsd:string"
+    },
+    "encoder": {
+      "@id": "amzn:encoder",
+      "@type": "xsd:string"
+    },
+    "endTime": {
+      "@id": "amzn:endTime",
+      "@type": "xsd:string"
+    },
+    "errors": {
+      "@id": "amzn:errors",
+      "@type": "xsd:string"
+    },
+    "eventTime": {
+      "@id": "amzn:eventTime",
+      "@type": "xsd:string"
+    },
+    "filterBy": {
+      "@id": "amzn:filterBy",
+      "@type": "xsd:string"
+    },
+    "filterByName": {
+      "@id": "amzn:filterByName",
+      "@type": "xsd:string"
+    },
+    "filterByRecordingConfigurationArn": {
+      "@id": "amzn:filterByRecordingConfigurationArn",
+      "@type": "xsd:string"
+    },
+    "fingerprint": {
+      "@id": "amzn:fingerprint",
+      "@type": "xsd:string"
+    },
+    "hasErrorEvent": {
+      "@id": "amzn:hasErrorEvent",
+      "@type": "xsd:string"
+    },
+    "health": {
+      "@id": "amzn:health",
+      "@type": "xsd:string"
+    },
+    "ingestConfiguration": {
+      "@id": "amzn:ingestConfiguration",
+      "@type": "xsd:string"
+    },
+    "ingestEndpoint": {
+      "@id": "amzn:ingestEndpoint",
+      "@type": "xsd:string"
+    },
+    "insecureIngest": {
+      "@id": "amzn:insecureIngest",
+      "@type": "xsd:string"
+    },
+    "keyPair": {
+      "@id": "amzn:keyPair",
+      "@type": "xsd:string"
+    },
+    "keyPairs": {
+      "@id": "amzn:keyPairs",
+      "@type": "xsd:string"
+    },
+    "latencyMode": {
+      "@id": "amzn:latencyMode",
+      "@type": "xsd:string"
+    },
+    "maxResults": {
+      "@id": "amzn:maxResults",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "amzn:message",
+      "@type": "xsd:string"
+    },
+    "metadata": {
+      "@id": "amzn:metadata",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "nextToken": {
+      "@id": "amzn:nextToken",
+      "@type": "xsd:string"
+    },
+    "playbackUrl": {
+      "@id": "amzn:playbackUrl",
+      "@type": "xsd:string"
+    },
+    "preset": {
+      "@id": "amzn:preset",
+      "@type": "xsd:string"
+    },
+    "publicKeyMaterial": {
+      "@id": "amzn:publicKeyMaterial",
+      "@type": "xsd:string"
+    },
+    "recordingConfiguration": {
+      "@id": "amzn:recordingConfiguration",
+      "@type": "xsd:string"
+    },
+    "recordingConfigurationArn": {
+      "@id": "amzn:recordingConfigurationArn",
+      "@type": "xsd:string"
+    },
+    "recordingConfigurations": {
+      "@id": "amzn:recordingConfigurations",
+      "@type": "xsd:string"
+    },
+    "recordingMode": {
+      "@id": "amzn:recordingMode",
+      "@type": "xsd:string"
+    },
+    "recordingReconnectWindowSeconds": {
+      "@id": "amzn:recordingReconnectWindowSeconds",
+      "@type": "xsd:string"
+    },
+    "renditionConfiguration": {
+      "@id": "amzn:renditionConfiguration",
+      "@type": "xsd:string"
+    },
+    "renditionSelection": {
+      "@id": "amzn:renditionSelection",
+      "@type": "xsd:string"
+    },
+    "renditions": {
+      "@id": "amzn:renditions",
+      "@type": "xsd:string"
+    },
+    "resolution": {
+      "@id": "amzn:resolution",
+      "@type": "xsd:string"
+    },
+    "s3": {
+      "@id": "amzn:s3",
+      "@type": "xsd:string"
+    },
+    "sampleRate": {
+      "@id": "amzn:sampleRate",
+      "@type": "xsd:string"
+    },
+    "startTime": {
+      "@id": "amzn:startTime",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "amzn:state",
+      "@type": "xsd:string"
+    },
+    "storage": {
+      "@id": "amzn:storage",
+      "@type": "xsd:string"
+    },
+    "stream": {
+      "@id": "amzn:stream",
+      "@type": "xsd:string"
+    },
+    "streamId": {
+      "@id": "amzn:streamId",
+      "@type": "xsd:string"
+    },
+    "streamKey": {
+      "@id": "amzn:streamKey",
+      "@type": "xsd:string"
+    },
+    "streamKeys": {
+      "@id": "amzn:streamKeys",
+      "@type": "xsd:string"
+    },
+    "streamSession": {
+      "@id": "amzn:streamSession",
+      "@type": "xsd:string"
+    },
+    "streamSessions": {
+      "@id": "amzn:streamSessions",
+      "@type": "xsd:string"
+    },
+    "streams": {
+      "@id": "amzn:streams",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "amzn:tags",
+      "@type": "xsd:string"
+    },
+    "targetBitrate": {
+      "@id": "amzn:targetBitrate",
+      "@type": "xsd:string"
+    },
+    "targetFramerate": {
+      "@id": "amzn:targetFramerate",
+      "@type": "xsd:string"
+    },
+    "targetIntervalSeconds": {
+      "@id": "amzn:targetIntervalSeconds",
+      "@type": "xsd:string"
+    },
+    "thumbnailConfiguration": {
+      "@id": "amzn:thumbnailConfiguration",
+      "@type": "xsd:string"
+    },
+    "truncatedEvents": {
+      "@id": "amzn:truncatedEvents",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "amzn:type",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "amzn:value",
+      "@type": "xsd:string"
+    },
+    "video": {
+      "@id": "amzn:video",
+      "@type": "xsd:string"
+    },
+    "videoHeight": {
+      "@id": "amzn:videoHeight",
+      "@type": "xsd:string"
+    },
+    "videoWidth": {
+      "@id": "amzn:videoWidth",
+      "@type": "xsd:string"
+    },
+    "viewerCount": {
+      "@id": "amzn:viewerCount",
+      "@type": "xsd:string"
+    },
+    "viewerId": {
+      "@id": "amzn:viewerId",
+      "@type": "xsd:string"
+    },
+    "viewerSessionVersionsLessThanOrEqualTo": {
+      "@id": "amzn:viewerSessionVersionsLessThanOrEqualTo",
+      "@type": "xsd:string"
+    },
+    "viewerSessions": {
+      "@id": "amzn:viewerSessions",
+      "@type": "xsd:string"
+    }
+  }
+}

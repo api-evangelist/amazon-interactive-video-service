@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-start-viewer-session-revocation-response-structure.json",
+  "name": "StartViewerSessionRevocationResponse",
+  "description": "StartViewerSessionRevocationResponse schema",
+  "type": "object",
+  "properties": {}
+}

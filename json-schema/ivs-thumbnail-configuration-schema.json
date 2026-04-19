@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-thumbnail-configuration-schema.json",
+  "title": "ThumbnailConfiguration",
+  "description": "An object representing a configuration of thumbnails for recorded video.",
+  "type": "object",
+  "properties": {
+    "recordingMode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecordingMode"
+        },
+        {
+          "description": "Thumbnail recording mode. Default: <code>INTERVAL</code>."
+        }
+      ]
+    },
+    "resolution": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ThumbnailConfigurationResolution"
+        },
+        {
+          "description": "Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected resolution if the corresponding rendition is available during the stream; otherwise, they are recorded at source resolution. For more information about resolution values and their corresponding height and width dimensions, see <a href=\"https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html\">Auto-Record to Amazon S3</a>. Default: Null (source resolution is returned)."
+        }
+      ]
+    },
+    "storage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ThumbnailConfigurationStorageList"
+        },
+        {
+          "description": "Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>. Default: <code>SEQUENTIAL</code>."
+        }
+      ]
+    },
+    "targetIntervalSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetIntervalSeconds"
+        },
+        {
+          "description": "<p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p> <p> <b>Important:</b> For the <code>BASIC</code> channel type, setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href=\"https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html\"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>"
+        }
+      ]
+    }
+  }
+}

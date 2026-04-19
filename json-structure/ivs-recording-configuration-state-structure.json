@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-recording-configuration-state-structure.json",
+  "name": "RecordingConfigurationState",
+  "description": "RecordingConfigurationState schema",
+  "type": "string",
+  "enum": [
+    "CREATING",
+    "CREATE_FAILED",
+    "ACTIVE"
+  ]
+}

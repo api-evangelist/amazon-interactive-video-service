@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-get-stream-session-request-structure.json",
+  "name": "GetStreamSessionRequest",
+  "description": "GetStreamSessionRequest schema",
+  "type": "object",
+  "properties": {
+    "channelArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChannelArn"
+        },
+        {
+          "description": "ARN of the channel resource"
+        }
+      ]
+    },
+    "streamId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamId"
+        },
+        {
+          "description": "Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists."
+        }
+      ]
+    }
+  },
+  "required": [
+    "channelArn"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-batch-get-stream-key-request-structure.json",
+  "name": "BatchGetStreamKeyRequest",
+  "description": "BatchGetStreamKeyRequest schema",
+  "type": "object",
+  "properties": {
+    "arns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamKeyArnList"
+        },
+        {
+          "description": "Array of ARNs, one per stream key."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arns"
+  ]
+}

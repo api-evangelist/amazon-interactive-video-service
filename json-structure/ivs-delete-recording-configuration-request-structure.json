@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-delete-recording-configuration-request-structure.json",
+  "name": "DeleteRecordingConfigurationRequest",
+  "description": "DeleteRecordingConfigurationRequest schema",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecordingConfigurationArn"
+        },
+        {
+          "description": "ARN of the recording configuration to be deleted."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn"
+  ]
+}

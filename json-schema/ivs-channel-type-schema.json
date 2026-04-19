@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-channel-type-schema.json",
+  "title": "ChannelType",
+  "description": "ChannelType schema",
+  "type": "string",
+  "enum": [
+    "BASIC",
+    "STANDARD",
+    "ADVANCED_SD",
+    "ADVANCED_HD"
+  ]
+}

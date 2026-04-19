@@ -1,0 +1,6 @@
+{
+  "arn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "fingerprint": "example-value",
+  "name": "example-resource",
+  "tags": "example-value"
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-audio-configuration-structure.json",
+  "name": "AudioConfiguration",
+  "description": "Object specifying a stream\u2019s audio configuration, as set up by the broadcaster (usually in an encoder). This is part of the <a>IngestConfiguration</a> object and used for monitoring stream health.",
+  "type": "object",
+  "properties": {
+    "channels": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "Number of audio channels."
+        }
+      ]
+    },
+    "codec": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Codec used for the audio encoding."
+        }
+      ]
+    },
+    "sampleRate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "Number of audio samples recorded per second."
+        }
+      ]
+    },
+    "targetBitrate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The expected ingest bitrate (bits per second). This is configured in the encoder."
+        }
+      ]
+    }
+  }
+}

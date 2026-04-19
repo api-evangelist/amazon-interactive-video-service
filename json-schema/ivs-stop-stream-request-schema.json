@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-stop-stream-request-schema.json",
+  "title": "StopStreamRequest",
+  "description": "StopStreamRequest schema",
+  "type": "object",
+  "properties": {
+    "channelArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChannelArn"
+        },
+        {
+          "description": "ARN of the channel for which the stream is to be stopped."
+        }
+      ]
+    }
+  },
+  "required": [
+    "channelArn"
+  ]
+}

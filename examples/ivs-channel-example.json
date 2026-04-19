@@ -1,0 +1,13 @@
+{
+  "arn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "authorized": "example-value",
+  "ingestEndpoint": "example-value",
+  "insecureIngest": "example-value",
+  "latencyMode": "example-value",
+  "name": "example-resource",
+  "playbackUrl": "https://example.com/path",
+  "preset": "example-value",
+  "recordingConfigurationArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "tags": "example-value",
+  "type": "example-value"
+}

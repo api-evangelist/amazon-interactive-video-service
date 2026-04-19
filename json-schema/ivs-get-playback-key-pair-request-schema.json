@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-get-playback-key-pair-request-schema.json",
+  "title": "GetPlaybackKeyPairRequest",
+  "description": "GetPlaybackKeyPairRequest schema",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlaybackKeyPairArn"
+        },
+        {
+          "description": "ARN of the key pair to be returned."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn"
+  ]
+}

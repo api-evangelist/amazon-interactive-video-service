@@ -1,0 +1,6 @@
+{
+  "filterByName": "example-resource",
+  "filterByRecordingConfigurationArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "maxResults": "example-value",
+  "nextToken": "example-value"
+}

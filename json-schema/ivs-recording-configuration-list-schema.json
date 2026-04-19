@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-recording-configuration-list-schema.json",
+  "title": "RecordingConfigurationList",
+  "description": "RecordingConfigurationList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "arn",
+      "destinationConfiguration",
+      "state"
+    ],
+    "properties": {
+      "arn": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/RecordingConfigurationArn"
+          },
+          {
+            "description": "Recording-configuration ARN."
+          }
+        ]
+      },
+      "destinationConfiguration": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/DestinationConfiguration"
+          },
+          {
+            "description": "A complex type that contains information about where recorded video will be stored."
+          }
+        ]
+      },
+      "name": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/RecordingConfigurationName"
+          },
+          {
+            "description": "Recording-configuration name. The value does not need to be unique."
+          }
+        ]
+      },
+      "state": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/RecordingConfigurationState"
+          },
+          {
+            "description": "Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream."
+          }
+        ]
+      },
+      "tags": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Tags"
+          },
+          {
+            "description": "Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and \"Tag naming limits and requirements\"; Amazon IVS has no service-specific constraints beyond what is documented there."
+          }
+        ]
+      }
+    },
+    "description": "Summary information about a RecordingConfiguration."
+  }
+}

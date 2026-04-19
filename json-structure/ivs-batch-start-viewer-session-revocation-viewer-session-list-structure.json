@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-batch-start-viewer-session-revocation-viewer-session-list-structure.json",
+  "name": "BatchStartViewerSessionRevocationViewerSessionList",
+  "description": "BatchStartViewerSessionRevocationViewerSessionList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "channelArn",
+      "viewerId"
+    ],
+    "properties": {
+      "channelArn": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ChannelArn"
+          },
+          {
+            "description": "The ARN of the channel associated with the viewer session to revoke."
+          }
+        ]
+      },
+      "viewerId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ViewerId"
+          },
+          {
+            "description": "The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information."
+          }
+        ]
+      },
+      "viewerSessionVersionsLessThanOrEqualTo": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ViewerSessionVersion"
+          },
+          {
+            "description": "An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0."
+          }
+        ]
+      }
+    },
+    "description": "A viewer session to revoke in the call to <a>BatchStartViewerSessionRevocation</a>."
+  }
+}

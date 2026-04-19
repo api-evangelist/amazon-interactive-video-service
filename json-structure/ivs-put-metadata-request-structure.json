@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-put-metadata-request-structure.json",
+  "name": "PutMetadataRequest",
+  "description": "PutMetadataRequest schema",
+  "type": "object",
+  "properties": {
+    "channelArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChannelArn"
+        },
+        {
+          "description": "ARN of the channel into which metadata is inserted. This channel must have an active stream."
+        }
+      ]
+    },
+    "metadata": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamMetadata"
+        },
+        {
+          "description": "Metadata to insert into the stream. Maximum: 1 KB per request."
+        }
+      ]
+    }
+  },
+  "required": [
+    "channelArn",
+    "metadata"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-get-stream-request-structure.json",
+  "name": "GetStreamRequest",
+  "description": "GetStreamRequest schema",
+  "type": "object",
+  "properties": {
+    "channelArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChannelArn"
+        },
+        {
+          "description": "Channel ARN for stream to be accessed."
+        }
+      ]
+    }
+  },
+  "required": [
+    "channelArn"
+  ]
+}

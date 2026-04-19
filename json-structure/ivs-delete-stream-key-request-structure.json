@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-delete-stream-key-request-structure.json",
+  "name": "DeleteStreamKeyRequest",
+  "description": "DeleteStreamKeyRequest schema",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamKeyArn"
+        },
+        {
+          "description": "ARN of the stream key to be deleted."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn"
+  ]
+}

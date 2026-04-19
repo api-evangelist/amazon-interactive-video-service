@@ -1,0 +1,9 @@
+{
+  "channel": "example-value",
+  "endTime": "2025-03-15T14:30:00Z",
+  "ingestConfiguration": "example-value",
+  "recordingConfiguration": "example-value",
+  "startTime": "2025-03-15T14:30:00Z",
+  "streamId": "id-abc123",
+  "truncatedEvents": "example-value"
+}

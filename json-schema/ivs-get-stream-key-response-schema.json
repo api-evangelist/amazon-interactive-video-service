@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-get-stream-key-response-schema.json",
+  "title": "GetStreamKeyResponse",
+  "description": "GetStreamKeyResponse schema",
+  "type": "object",
+  "properties": {
+    "streamKey": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamKey"
+        },
+        {
+          "description": "<zonbook></zonbook><xhtml></xhtml>"
+        }
+      ]
+    }
+  }
+}

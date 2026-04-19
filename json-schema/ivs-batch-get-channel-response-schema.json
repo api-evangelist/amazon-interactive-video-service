@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-batch-get-channel-response-schema.json",
+  "title": "BatchGetChannelResponse",
+  "description": "BatchGetChannelResponse schema",
+  "type": "object",
+  "properties": {
+    "channels": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Channels"
+        },
+        {
+          "description": "<p/>"
+        }
+      ]
+    },
+    "errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchErrors"
+        },
+        {
+          "description": "Each error object is related to a specific ARN in the request."
+        }
+      ]
+    }
+  }
+}

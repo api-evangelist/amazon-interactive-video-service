@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-get-channel-request-schema.json",
+  "title": "GetChannelRequest",
+  "description": "GetChannelRequest schema",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChannelArn"
+        },
+        {
+          "description": "ARN of the channel for which the configuration is to be retrieved."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn"
+  ]
+}

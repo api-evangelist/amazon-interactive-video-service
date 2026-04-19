@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-batch-start-viewer-session-revocation-errors-schema.json",
+  "title": "BatchStartViewerSessionRevocationErrors",
+  "description": "BatchStartViewerSessionRevocationErrors schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "channelArn",
+      "viewerId"
+    ],
+    "properties": {
+      "channelArn": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ChannelArn"
+          },
+          {
+            "description": "Channel ARN."
+          }
+        ]
+      },
+      "code": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/errorCode"
+          },
+          {
+            "description": "Error code."
+          }
+        ]
+      },
+      "message": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/errorMessage"
+          },
+          {
+            "description": "Error message, determined by the application."
+          }
+        ]
+      },
+      "viewerId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ViewerId"
+          },
+          {
+            "description": "The ID of the viewer session to revoke."
+          }
+        ]
+      }
+    },
+    "description": "Error for a request in the batch for BatchStartViewerSessionRevocation. Each error is related to a specific channel-ARN and viewer-ID pair."
+  }
+}

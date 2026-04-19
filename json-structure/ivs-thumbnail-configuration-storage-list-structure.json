@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-thumbnail-configuration-storage-list-structure.json",
+  "name": "ThumbnailConfigurationStorageList",
+  "description": "ThumbnailConfigurationStorageList schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "enum": [
+      "SEQUENTIAL",
+      "LATEST"
+    ]
+  }
+}

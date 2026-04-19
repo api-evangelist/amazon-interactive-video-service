@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-stream-event-schema.json",
+  "title": "StreamEvent",
+  "description": "Object specifying a stream\u2019s events. For a list of events, see <a href=\"https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html\">Using Amazon EventBridge with Amazon IVS</a>.",
+  "type": "object",
+  "properties": {
+    "eventTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Time"
+        },
+        {
+          "description": "Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Name that identifies the stream event within a <code>type</code>."
+        }
+      ]
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Logical group for certain events."
+        }
+      ]
+    }
+  }
+}

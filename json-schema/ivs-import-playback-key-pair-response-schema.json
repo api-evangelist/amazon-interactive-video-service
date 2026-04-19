@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-import-playback-key-pair-response-schema.json",
+  "title": "ImportPlaybackKeyPairResponse",
+  "description": "ImportPlaybackKeyPairResponse schema",
+  "type": "object",
+  "properties": {
+    "keyPair": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlaybackKeyPair"
+        },
+        {
+          "description": "<p/>"
+        }
+      ]
+    }
+  }
+}

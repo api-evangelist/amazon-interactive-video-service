@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-rendition-configuration-rendition-selection-structure.json",
+  "name": "RenditionConfigurationRenditionSelection",
+  "description": "RenditionConfigurationRenditionSelection schema",
+  "type": "string",
+  "enum": [
+    "ALL",
+    "NONE",
+    "CUSTOM"
+  ]
+}

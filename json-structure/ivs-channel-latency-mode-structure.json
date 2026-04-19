@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-channel-latency-mode-structure.json",
+  "name": "ChannelLatencyMode",
+  "description": "ChannelLatencyMode schema",
+  "type": "string",
+  "enum": [
+    "NORMAL",
+    "LOW"
+  ]
+}

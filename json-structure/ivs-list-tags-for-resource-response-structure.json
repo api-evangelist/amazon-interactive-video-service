@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-list-tags-for-resource-response-structure.json",
+  "name": "ListTagsForResourceResponse",
+  "description": "ListTagsForResourceResponse schema",
+  "type": "object",
+  "properties": {
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Tags"
+        },
+        {
+          "description": "Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "tags"
+  ]
+}

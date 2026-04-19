@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-rendition-configuration-structure.json",
+  "name": "RenditionConfiguration",
+  "description": "Object that describes which renditions should be recorded for a stream.",
+  "type": "object",
+  "properties": {
+    "renditionSelection": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RenditionConfigurationRenditionSelection"
+        },
+        {
+          "description": "Indicates which set of renditions are recorded for a stream. For <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If <code>CUSTOM</code> is specified, a set of renditions must be specified in the <code>renditions</code> field. Default: <code>ALL</code>."
+        }
+      ]
+    },
+    "renditions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RenditionConfigurationRenditionList"
+        },
+        {
+          "description": "Indicates which renditions are recorded for a stream, if <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions are recorded if they are available during the stream. If a selected rendition is unavailable, the best available rendition is recorded. For details on the resolution dimensions of each rendition, see <a href=\"https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html\">Auto-Record to Amazon S3</a>."
+        }
+      ]
+    }
+  }
+}

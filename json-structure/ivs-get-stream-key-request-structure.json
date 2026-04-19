@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-get-stream-key-request-structure.json",
+  "name": "GetStreamKeyRequest",
+  "description": "GetStreamKeyRequest schema",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamKeyArn"
+        },
+        {
+          "description": "ARN for the stream key to be retrieved."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn"
+  ]
+}

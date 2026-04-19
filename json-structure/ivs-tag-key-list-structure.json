@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-tag-key-list-structure.json",
+  "name": "TagKeyList",
+  "description": "TagKeyList schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 128
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-s3-destination-configuration-schema.json",
+  "title": "S3DestinationConfiguration",
+  "description": "A complex type that describes an S3 location where recorded videos will be stored.",
+  "type": "object",
+  "properties": {
+    "bucketName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3DestinationBucketName"
+        },
+        {
+          "description": "Location (S3 bucket name) where recorded videos will be stored."
+        }
+      ]
+    }
+  },
+  "required": [
+    "bucketName"
+  ]
+}

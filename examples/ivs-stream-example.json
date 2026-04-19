@@ -1,0 +1,9 @@
+{
+  "channelArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "health": "example-value",
+  "playbackUrl": "https://example.com/path",
+  "startTime": "2025-03-15T14:30:00Z",
+  "state": "example-value",
+  "streamId": "id-abc123",
+  "viewerCount": "example-value"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-get-channel-response-schema.json",
+  "title": "GetChannelResponse",
+  "description": "GetChannelResponse schema",
+  "type": "object",
+  "properties": {
+    "channel": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Channel"
+        },
+        {
+          "description": "<p/>"
+        }
+      ]
+    }
+  }
+}

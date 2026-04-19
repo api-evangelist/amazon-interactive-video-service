@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-batch-error-schema.json",
+  "title": "BatchError",
+  "description": "Error related to a specific channel, specified by its ARN.",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceArn"
+        },
+        {
+          "description": "Channel ARN."
+        }
+      ]
+    },
+    "code": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/errorCode"
+        },
+        {
+          "description": "Error code."
+        }
+      ]
+    },
+    "message": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/errorMessage"
+        },
+        {
+          "description": "Error message, determined by the application."
+        }
+      ]
+    }
+  }
+}

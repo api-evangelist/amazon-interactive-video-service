@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-import-playback-key-pair-response-structure.json",
+  "name": "ImportPlaybackKeyPairResponse",
+  "description": "ImportPlaybackKeyPairResponse schema",
+  "type": "object",
+  "properties": {
+    "keyPair": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlaybackKeyPair"
+        },
+        {
+          "description": "<p/>"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-video-configuration-structure.json",
+  "name": "VideoConfiguration",
+  "description": "Object specifying a stream\u2019s video configuration, as set up by the broadcaster (usually in an encoder). This is part of the <a>IngestConfiguration</a> object and used for monitoring stream health.",
+  "type": "object",
+  "properties": {
+    "avcLevel": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification."
+        }
+      ]
+    },
+    "avcProfile": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification."
+        }
+      ]
+    },
+    "codec": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Codec used for the video encoding."
+        }
+      ]
+    },
+    "encoder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Software or hardware used to encode the video."
+        }
+      ]
+    },
+    "targetBitrate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The expected ingest bitrate (bits per second). This is configured in the encoder."
+        }
+      ]
+    },
+    "targetFramerate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The expected ingest framerate. This is configured in the encoder."
+        }
+      ]
+    },
+    "videoHeight": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "Video-resolution height in pixels."
+        }
+      ]
+    },
+    "videoWidth": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "Video-resolution width in pixels."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-stream-filters-structure.json",
+  "name": "StreamFilters",
+  "description": "Object specifying the stream attribute on which to filter.",
+  "type": "object",
+  "properties": {
+    "health": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamHealth"
+        },
+        {
+          "description": "The stream\u2019s health."
+        }
+      ]
+    }
+  }
+}

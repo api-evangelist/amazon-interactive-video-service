@@ -1,0 +1,67 @@
+vocabulary: "1.0.0"
+info:
+  provider: Amazon Interactive Video Service
+  description: Vocabulary for Amazon Interactive Video Service covering all API resources and operations.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+operational:
+  apis:
+    - namespace: ivs
+      version: "2024-01-01"
+      baseUrl: https://ivs.us-east-1.amazonaws.com
+      status: active
+  resources:
+    - name: resources
+      api: ivs
+      actions: [list, create, delete, get, update]
+  actions:
+    - name: list
+      methods: [GET]
+      pattern: read
+    - name: create
+      methods: [POST]
+      pattern: write
+    - name: get
+      methods: [GET]
+      pattern: read
+    - name: update
+      methods: [PUT, PATCH]
+      pattern: write
+    - name: delete
+      methods: [DELETE]
+      pattern: destructive
+  authentication:
+    schemes:
+      - type: AWS Signature Version 4
+        placement: header
+capability:
+  workflows:
+    - name: Live Streaming Management
+      file: capabilities/live-streaming-management.yaml
+      apis: [ivs]
+      toolCount: 8
+      personas: [Developer, Media Engineer]
+  personas:
+    - id: primary-persona
+      name: Developer
+      description: Manages Amazon Interactive Video Service resources and operations
+  domains:
+    - name: Live Streaming
+      description: Managed live streaming with low latency for interactive applications.
+  namespaces:
+    - name: ivs
+      type: consumed
+    - name: live-streaming-management-api
+      type: rest
+      port: 8080
+    - name: live-streaming-management-mcp
+      type: mcp
+      port: 9090
+  binds:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+crossReference:
+  - resource: resources
+    operations: [listchannels, createchannel, deletechannel, getchannel]
+    workflows: [Live Streaming Management]
+    personas: [Developer, Media Engineer]

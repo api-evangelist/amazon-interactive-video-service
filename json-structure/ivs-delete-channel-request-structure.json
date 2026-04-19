@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-delete-channel-request-structure.json",
+  "name": "DeleteChannelRequest",
+  "description": "DeleteChannelRequest schema",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChannelArn"
+        },
+        {
+          "description": "ARN of the channel to be deleted."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn"
+  ]
+}

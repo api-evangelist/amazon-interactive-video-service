@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-stream-health-structure.json",
+  "name": "StreamHealth",
+  "description": "StreamHealth schema",
+  "type": "string",
+  "enum": [
+    "HEALTHY",
+    "STARVING",
+    "UNKNOWN"
+  ]
+}

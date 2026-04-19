@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-rendition-configuration-rendition-list-structure.json",
+  "name": "RenditionConfigurationRenditionList",
+  "description": "RenditionConfigurationRenditionList schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "enum": [
+      "FULL_HD",
+      "HD",
+      "SD",
+      "LOWEST_RESOLUTION"
+    ]
+  }
+}

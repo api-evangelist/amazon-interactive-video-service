@@ -1,0 +1,8 @@
+{
+  "destinationConfiguration": "example-value",
+  "name": "example-resource",
+  "recordingReconnectWindowSeconds": "example-value",
+  "renditionConfiguration": "example-value",
+  "tags": "example-value",
+  "thumbnailConfiguration": "example-value"
+}

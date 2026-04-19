@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-thumbnail-configuration-resolution-structure.json",
+  "name": "ThumbnailConfigurationResolution",
+  "description": "ThumbnailConfigurationResolution schema",
+  "type": "string",
+  "enum": [
+    "FULL_HD",
+    "HD",
+    "SD",
+    "LOWEST_RESOLUTION"
+  ]
+}

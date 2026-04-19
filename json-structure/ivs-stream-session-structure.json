@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-stream-session-structure.json",
+  "name": "StreamSession",
+  "description": "Object that captures the Amazon IVS configuration that the customer provisioned, the ingest configurations that the broadcaster used, and the most recent Amazon IVS stream events it encountered.",
+  "type": "object",
+  "properties": {
+    "channel": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Channel"
+        },
+        {
+          "description": "The properties of the channel at the time of going live."
+        }
+      ]
+    },
+    "endTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Time"
+        },
+        {
+          "description": "Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>."
+        }
+      ]
+    },
+    "ingestConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IngestConfiguration"
+        },
+        {
+          "description": "The properties of the incoming RTMP stream for the stream."
+        }
+      ]
+    },
+    "recordingConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecordingConfiguration"
+        },
+        {
+          "description": "The properties of recording the live stream."
+        }
+      ]
+    },
+    "startTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Time"
+        },
+        {
+          "description": "Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>."
+        }
+      ]
+    },
+    "streamId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamId"
+        },
+        {
+          "description": "Unique identifier for a live or previously live stream in the specified channel."
+        }
+      ]
+    },
+    "truncatedEvents": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamEvents"
+        },
+        {
+          "description": "List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href=\"https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html\">Using Amazon EventBridge with Amazon IVS</a>."
+        }
+      ]
+    }
+  }
+}

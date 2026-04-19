@@ -1,0 +1,10 @@
+{
+  "avcLevel": "example-value",
+  "avcProfile": "example-value",
+  "codec": "example-value",
+  "encoder": "example-value",
+  "targetBitrate": "example-value",
+  "targetFramerate": "example-value",
+  "videoHeight": "id-abc123",
+  "videoWidth": "id-abc123"
+}

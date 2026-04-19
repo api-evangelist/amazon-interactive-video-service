@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-list-stream-keys-response-structure.json",
+  "name": "ListStreamKeysResponse",
+  "description": "ListStreamKeysResponse schema",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set."
+        }
+      ]
+    },
+    "streamKeys": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamKeyList"
+        },
+        {
+          "description": "List of stream keys."
+        }
+      ]
+    }
+  },
+  "required": [
+    "streamKeys"
+  ]
+}

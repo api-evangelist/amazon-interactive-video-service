@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-create-stream-key-response-structure.json",
+  "name": "CreateStreamKeyResponse",
+  "description": "CreateStreamKeyResponse schema",
+  "type": "object",
+  "properties": {
+    "streamKey": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamKey"
+        },
+        {
+          "description": "Stream key used to authenticate an RTMPS stream for ingestion."
+        }
+      ]
+    }
+  }
+}

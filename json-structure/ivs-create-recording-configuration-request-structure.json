@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-create-recording-configuration-request-structure.json",
+  "name": "CreateRecordingConfigurationRequest",
+  "description": "CreateRecordingConfigurationRequest schema",
+  "type": "object",
+  "properties": {
+    "destinationConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DestinationConfiguration"
+        },
+        {
+          "description": "A complex type that contains a destination configuration for where recorded video will be stored."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecordingConfigurationName"
+        },
+        {
+          "description": "Recording-configuration name. The value does not need to be unique."
+        }
+      ]
+    },
+    "recordingReconnectWindowSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecordingReconnectWindowSeconds"
+        },
+        {
+          "description": "If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0."
+        }
+      ]
+    },
+    "renditionConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RenditionConfiguration"
+        },
+        {
+          "description": "Object that describes which renditions should be recorded for a stream."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Tags"
+        },
+        {
+          "description": "Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and \"Tag naming limits and requirements\"; Amazon IVS has no service-specific constraints beyond what is documented there."
+        }
+      ]
+    },
+    "thumbnailConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ThumbnailConfiguration"
+        },
+        {
+          "description": "A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session."
+        }
+      ]
+    }
+  },
+  "required": [
+    "destinationConfiguration"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-playback-key-pair-list-structure.json",
+  "name": "PlaybackKeyPairList",
+  "description": "PlaybackKeyPairList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "arn": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PlaybackKeyPairArn"
+          },
+          {
+            "description": "Key-pair ARN."
+          }
+        ]
+      },
+      "name": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PlaybackKeyPairName"
+          },
+          {
+            "description": "Playback-key-pair name. The value does not need to be unique."
+          }
+        ]
+      },
+      "tags": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Tags"
+          },
+          {
+            "description": "Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and \"Tag naming limits and requirements\"; Amazon IVS has no service-specific constraints beyond what is documented there."
+          }
+        ]
+      }
+    },
+    "description": "Summary information about a playback key pair."
+  }
+}

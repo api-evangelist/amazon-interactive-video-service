@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-stream-summary-schema.json",
+  "title": "StreamSummary",
+  "description": "Summary information about a stream.",
+  "type": "object",
+  "properties": {
+    "channelArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChannelArn"
+        },
+        {
+          "description": "Channel ARN for the stream."
+        }
+      ]
+    },
+    "health": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamHealth"
+        },
+        {
+          "description": "The stream\u2019s health."
+        }
+      ]
+    },
+    "startTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamStartTime"
+        },
+        {
+          "description": "Time of the stream\u2019s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. "
+        }
+      ]
+    },
+    "state": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamState"
+        },
+        {
+          "description": "The stream\u2019s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a \"NotBroadcasting\" error will indicate that the stream is not live."
+        }
+      ]
+    },
+    "streamId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamId"
+        },
+        {
+          "description": "Unique identifier for a live or previously live stream in the specified channel."
+        }
+      ]
+    },
+    "viewerCount": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamViewerCount"
+        },
+        {
+          "description": "A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry."
+        }
+      ]
+    }
+  }
+}

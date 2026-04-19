@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-delete-playback-key-pair-response-schema.json",
+  "title": "DeletePlaybackKeyPairResponse",
+  "description": "DeletePlaybackKeyPairResponse schema",
+  "type": "object",
+  "properties": {}
+}

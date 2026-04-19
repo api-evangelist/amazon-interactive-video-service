@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-list-recording-configurations-response-schema.json",
+  "title": "ListRecordingConfigurationsResponse",
+  "description": "ListRecordingConfigurationsResponse schema",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set."
+        }
+      ]
+    },
+    "recordingConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecordingConfigurationList"
+        },
+        {
+          "description": "List of the matching recording configurations."
+        }
+      ]
+    }
+  },
+  "required": [
+    "recordingConfigurations"
+  ]
+}

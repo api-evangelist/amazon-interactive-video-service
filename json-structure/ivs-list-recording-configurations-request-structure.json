@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-list-recording-configurations-request-structure.json",
+  "name": "ListRecordingConfigurationsRequest",
+  "description": "ListRecordingConfigurationsRequest schema",
+  "type": "object",
+  "properties": {
+    "maxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxRecordingConfigurationResults"
+        },
+        {
+          "description": "Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. "
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field."
+        }
+      ]
+    }
+  }
+}

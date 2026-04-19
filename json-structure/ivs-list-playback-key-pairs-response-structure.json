@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-list-playback-key-pairs-response-structure.json",
+  "name": "ListPlaybackKeyPairsResponse",
+  "description": "ListPlaybackKeyPairsResponse schema",
+  "type": "object",
+  "properties": {
+    "keyPairs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlaybackKeyPairList"
+        },
+        {
+          "description": "List of key pairs."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set."
+        }
+      ]
+    }
+  },
+  "required": [
+    "keyPairs"
+  ]
+}

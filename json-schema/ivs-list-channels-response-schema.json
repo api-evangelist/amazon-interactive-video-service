@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-list-channels-response-schema.json",
+  "title": "ListChannelsResponse",
+  "description": "ListChannelsResponse schema",
+  "type": "object",
+  "properties": {
+    "channels": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChannelList"
+        },
+        {
+          "description": "List of the matching channels."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set."
+        }
+      ]
+    }
+  },
+  "required": [
+    "channels"
+  ]
+}

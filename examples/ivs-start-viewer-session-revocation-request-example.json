@@ -1,0 +1,5 @@
+{
+  "channelArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "viewerId": "id-abc123",
+  "viewerSessionVersionsLessThanOrEqualTo": "example-value"
+}

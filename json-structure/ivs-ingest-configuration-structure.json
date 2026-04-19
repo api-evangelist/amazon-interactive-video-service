@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-ingest-configuration-structure.json",
+  "name": "IngestConfiguration",
+  "description": "Object specifying the ingest configuration set up by the broadcaster, usually in an encoder.",
+  "type": "object",
+  "properties": {
+    "audio": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AudioConfiguration"
+        },
+        {
+          "description": "Encoder settings for audio."
+        }
+      ]
+    },
+    "video": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VideoConfiguration"
+        },
+        {
+          "description": "Encoder settings for video."
+        }
+      ]
+    }
+  }
+}

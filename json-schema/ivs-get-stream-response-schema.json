@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-get-stream-response-schema.json",
+  "title": "GetStreamResponse",
+  "description": "GetStreamResponse schema",
+  "type": "object",
+  "properties": {
+    "stream": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Stream"
+        },
+        {
+          "description": "<p/>"
+        }
+      ]
+    }
+  }
+}

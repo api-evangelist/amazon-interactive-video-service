@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-recording-configuration-state-schema.json",
+  "title": "RecordingConfigurationState",
+  "description": "RecordingConfigurationState schema",
+  "type": "string",
+  "enum": [
+    "CREATING",
+    "CREATE_FAILED",
+    "ACTIVE"
+  ]
+}

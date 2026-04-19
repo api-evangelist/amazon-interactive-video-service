@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-batch-get-channel-request-schema.json",
+  "title": "BatchGetChannelRequest",
+  "description": "BatchGetChannelRequest schema",
+  "type": "object",
+  "properties": {
+    "arns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChannelArnList"
+        },
+        {
+          "description": "Array of ARNs, one per channel."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arns"
+  ]
+}

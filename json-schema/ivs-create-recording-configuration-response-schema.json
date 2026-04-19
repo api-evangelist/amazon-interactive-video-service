@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-create-recording-configuration-response-schema.json",
+  "title": "CreateRecordingConfigurationResponse",
+  "description": "CreateRecordingConfigurationResponse schema",
+  "type": "object",
+  "properties": {
+    "recordingConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecordingConfiguration"
+        },
+        {
+          "description": "<zonbook></zonbook><xhtml></xhtml>"
+        }
+      ]
+    }
+  }
+}

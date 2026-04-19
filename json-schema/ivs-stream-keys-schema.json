@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-stream-keys-schema.json",
+  "title": "StreamKeys",
+  "description": "StreamKeys schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "arn": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StreamKeyArn"
+          },
+          {
+            "description": "Stream-key ARN."
+          }
+        ]
+      },
+      "channelArn": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ChannelArn"
+          },
+          {
+            "description": "Channel ARN for the stream."
+          }
+        ]
+      },
+      "tags": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Tags"
+          },
+          {
+            "description": "Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and \"Tag naming limits and requirements\"; Amazon IVS has no service-specific constraints beyond what is documented there."
+          }
+        ]
+      },
+      "value": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StreamKeyValue"
+          },
+          {
+            "description": "Stream-key value."
+          }
+        ]
+      }
+    },
+    "description": "Object specifying a stream key."
+  }
+}

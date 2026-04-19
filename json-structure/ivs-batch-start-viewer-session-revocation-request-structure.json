@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-batch-start-viewer-session-revocation-request-structure.json",
+  "name": "BatchStartViewerSessionRevocationRequest",
+  "description": "BatchStartViewerSessionRevocationRequest schema",
+  "type": "object",
+  "properties": {
+    "viewerSessions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchStartViewerSessionRevocationViewerSessionList"
+        },
+        {
+          "description": "Array of viewer sessions, one per channel-ARN and viewer-ID pair."
+        }
+      ]
+    }
+  },
+  "required": [
+    "viewerSessions"
+  ]
+}

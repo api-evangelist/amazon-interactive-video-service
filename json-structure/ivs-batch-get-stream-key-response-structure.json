@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-batch-get-stream-key-response-structure.json",
+  "name": "BatchGetStreamKeyResponse",
+  "description": "BatchGetStreamKeyResponse schema",
+  "type": "object",
+  "properties": {
+    "errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchErrors"
+        },
+        {
+          "description": "<p/>"
+        }
+      ]
+    },
+    "streamKeys": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamKeys"
+        },
+        {
+          "description": "<p/>"
+        }
+      ]
+    }
+  }
+}

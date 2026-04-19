@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-structure/ivs-get-stream-session-response-structure.json",
+  "name": "GetStreamSessionResponse",
+  "description": "GetStreamSessionResponse schema",
+  "type": "object",
+  "properties": {
+    "streamSession": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamSession"
+        },
+        {
+          "description": "List of stream details."
+        }
+      ]
+    }
+  }
+}

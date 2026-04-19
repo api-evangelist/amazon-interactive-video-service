@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/json-schema/ivs-channel-arn-list-schema.json",
+  "title": "ChannelArnList",
+  "description": "ChannelArnList schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "pattern": "^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$",
+    "minLength": 1,
+    "maxLength": 128
+  }
+}
