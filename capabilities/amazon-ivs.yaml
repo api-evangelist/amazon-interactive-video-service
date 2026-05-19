@@ -1,0 +1,1379 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon Interactive Video Service
+  description: 'Amazon Interactive Video Service. 30 operations. Lead operation: Amazon Interactive Video Service Batch Get
+    Channel. Self-contained Naftiko capability covering one Amazon Interactive Video Service business surface.'
+  tags:
+  - Amazon Interactive Video Service
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_INTERACTIVE_VIDEO_SERVICE_API_KEY: AMAZON_INTERACTIVE_VIDEO_SERVICE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-ivs
+    baseUri: http://ivs.{region}.amazonaws.com
+    description: Amazon Interactive Video Service business capability. Self-contained, no shared references.
+    resources:
+    - name: BatchGetChannel
+      path: /BatchGetChannel
+      operations:
+      - name: batchgetchannel
+        method: POST
+        description: Amazon Interactive Video Service Batch Get Channel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: BatchGetStreamKey
+      path: /BatchGetStreamKey
+      operations:
+      - name: batchgetstreamkey
+        method: POST
+        description: Amazon Interactive Video Service Batch Get Stream Key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: BatchStartViewerSessionRevocation
+      path: /BatchStartViewerSessionRevocation
+      operations:
+      - name: batchstartviewersessionrevocation
+        method: POST
+        description: Amazon Interactive Video Service Batch Start Viewer Session Revocation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: CreateChannel
+      path: /CreateChannel
+      operations:
+      - name: createchannel
+        method: POST
+        description: Amazon Interactive Video Service Create Channel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: CreateRecordingConfiguration
+      path: /CreateRecordingConfiguration
+      operations:
+      - name: createrecordingconfiguration
+        method: POST
+        description: Amazon Interactive Video Service Create Recording Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: CreateStreamKey
+      path: /CreateStreamKey
+      operations:
+      - name: createstreamkey
+        method: POST
+        description: Amazon Interactive Video Service Create Stream Key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: DeleteChannel
+      path: /DeleteChannel
+      operations:
+      - name: deletechannel
+        method: POST
+        description: Amazon Interactive Video Service Delete Channel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: DeletePlaybackKeyPair
+      path: /DeletePlaybackKeyPair
+      operations:
+      - name: deleteplaybackkeypair
+        method: POST
+        description: Amazon Interactive Video Service Delete Playback Key Pair
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: DeleteRecordingConfiguration
+      path: /DeleteRecordingConfiguration
+      operations:
+      - name: deleterecordingconfiguration
+        method: POST
+        description: Amazon Interactive Video Service Delete Recording Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: DeleteStreamKey
+      path: /DeleteStreamKey
+      operations:
+      - name: deletestreamkey
+        method: POST
+        description: Amazon Interactive Video Service Delete Stream Key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: GetChannel
+      path: /GetChannel
+      operations:
+      - name: getchannel
+        method: POST
+        description: Amazon Interactive Video Service Get Channel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: GetPlaybackKeyPair
+      path: /GetPlaybackKeyPair
+      operations:
+      - name: getplaybackkeypair
+        method: POST
+        description: Amazon Interactive Video Service Get Playback Key Pair
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: GetRecordingConfiguration
+      path: /GetRecordingConfiguration
+      operations:
+      - name: getrecordingconfiguration
+        method: POST
+        description: Amazon Interactive Video Service Get Recording Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: GetStream
+      path: /GetStream
+      operations:
+      - name: getstream
+        method: POST
+        description: Amazon Interactive Video Service Get Stream
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: GetStreamKey
+      path: /GetStreamKey
+      operations:
+      - name: getstreamkey
+        method: POST
+        description: Amazon Interactive Video Service Get Stream Key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: GetStreamSession
+      path: /GetStreamSession
+      operations:
+      - name: getstreamsession
+        method: POST
+        description: Amazon Interactive Video Service Get Stream Session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ImportPlaybackKeyPair
+      path: /ImportPlaybackKeyPair
+      operations:
+      - name: importplaybackkeypair
+        method: POST
+        description: Amazon Interactive Video Service Import Playback Key Pair
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ListChannels
+      path: /ListChannels
+      operations:
+      - name: listchannels
+        method: POST
+        description: Amazon Interactive Video Service List Channels
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ListPlaybackKeyPairs
+      path: /ListPlaybackKeyPairs
+      operations:
+      - name: listplaybackkeypairs
+        method: POST
+        description: Amazon Interactive Video Service List Playback Key Pairs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ListRecordingConfigurations
+      path: /ListRecordingConfigurations
+      operations:
+      - name: listrecordingconfigurations
+        method: POST
+        description: Amazon Interactive Video Service List Recording Configurations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ListStreamKeys
+      path: /ListStreamKeys
+      operations:
+      - name: liststreamkeys
+        method: POST
+        description: Amazon Interactive Video Service List Stream Keys
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ListStreamSessions
+      path: /ListStreamSessions
+      operations:
+      - name: liststreamsessions
+        method: POST
+        description: Amazon Interactive Video Service List Stream Sessions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ListStreams
+      path: /ListStreams
+      operations:
+      - name: liststreams
+        method: POST
+        description: Amazon Interactive Video Service List Streams
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: PutMetadata
+      path: /PutMetadata
+      operations:
+      - name: putmetadata
+        method: POST
+        description: Amazon Interactive Video Service Put Metadata
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: StartViewerSessionRevocation
+      path: /StartViewerSessionRevocation
+      operations:
+      - name: startviewersessionrevocation
+        method: POST
+        description: Amazon Interactive Video Service Start Viewer Session Revocation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: StopStream
+      path: /StopStream
+      operations:
+      - name: stopstream
+        method: POST
+        description: Amazon Interactive Video Service Stop Stream
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: UpdateChannel
+      path: /UpdateChannel
+      operations:
+      - name: updatechannel
+        method: POST
+        description: Amazon Interactive Video Service Update Channel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: tags-resourceArn
+      path: /tags/{resourceArn}
+      operations:
+      - name: listtagsforresource
+        method: GET
+        description: Amazon Interactive Video Service List Tags for Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: The ARN of the resource to be retrieved. The ARN must be URL-encoded.
+          required: true
+      - name: tagresource
+        method: POST
+        description: Amazon Interactive Video Service Tag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: tags-resourceArn}#tagKeys
+      path: /tags/{resourceArn}#tagKeys
+      operations:
+      - name: untagresource
+        method: DELETE
+        description: Amazon Interactive Video Service Untag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.
+          required: true
+        - name: tagKeys
+          in: query
+          type: array
+          description: Array of tags to be removed. Array of maps, each of the form s<code>tring:string (key:value)</code>.
+            See <a href="https://docs.aws.amazon.com/general/latest/gr/
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_INTERACTIVE_VIDEO_SERVICE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-ivs-rest
+    port: 8080
+    description: REST adapter for Amazon Interactive Video Service. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/batchgetchannel
+      name: batchgetchannel
+      description: REST surface for BatchGetChannel.
+      operations:
+      - method: POST
+        name: batchgetchannel
+        description: Amazon Interactive Video Service Batch Get Channel
+        call: amazon-ivs.batchgetchannel
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/batchgetstreamkey
+      name: batchgetstreamkey
+      description: REST surface for BatchGetStreamKey.
+      operations:
+      - method: POST
+        name: batchgetstreamkey
+        description: Amazon Interactive Video Service Batch Get Stream Key
+        call: amazon-ivs.batchgetstreamkey
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/batchstartviewersessionrevocation
+      name: batchstartviewersessionrevocation
+      description: REST surface for BatchStartViewerSessionRevocation.
+      operations:
+      - method: POST
+        name: batchstartviewersessionrevocation
+        description: Amazon Interactive Video Service Batch Start Viewer Session Revocation
+        call: amazon-ivs.batchstartviewersessionrevocation
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/createchannel
+      name: createchannel
+      description: REST surface for CreateChannel.
+      operations:
+      - method: POST
+        name: createchannel
+        description: Amazon Interactive Video Service Create Channel
+        call: amazon-ivs.createchannel
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/createrecordingconfiguration
+      name: createrecordingconfiguration
+      description: REST surface for CreateRecordingConfiguration.
+      operations:
+      - method: POST
+        name: createrecordingconfiguration
+        description: Amazon Interactive Video Service Create Recording Configuration
+        call: amazon-ivs.createrecordingconfiguration
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/createstreamkey
+      name: createstreamkey
+      description: REST surface for CreateStreamKey.
+      operations:
+      - method: POST
+        name: createstreamkey
+        description: Amazon Interactive Video Service Create Stream Key
+        call: amazon-ivs.createstreamkey
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/deletechannel
+      name: deletechannel
+      description: REST surface for DeleteChannel.
+      operations:
+      - method: POST
+        name: deletechannel
+        description: Amazon Interactive Video Service Delete Channel
+        call: amazon-ivs.deletechannel
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/deleteplaybackkeypair
+      name: deleteplaybackkeypair
+      description: REST surface for DeletePlaybackKeyPair.
+      operations:
+      - method: POST
+        name: deleteplaybackkeypair
+        description: Amazon Interactive Video Service Delete Playback Key Pair
+        call: amazon-ivs.deleteplaybackkeypair
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/deleterecordingconfiguration
+      name: deleterecordingconfiguration
+      description: REST surface for DeleteRecordingConfiguration.
+      operations:
+      - method: POST
+        name: deleterecordingconfiguration
+        description: Amazon Interactive Video Service Delete Recording Configuration
+        call: amazon-ivs.deleterecordingconfiguration
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/deletestreamkey
+      name: deletestreamkey
+      description: REST surface for DeleteStreamKey.
+      operations:
+      - method: POST
+        name: deletestreamkey
+        description: Amazon Interactive Video Service Delete Stream Key
+        call: amazon-ivs.deletestreamkey
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getchannel
+      name: getchannel
+      description: REST surface for GetChannel.
+      operations:
+      - method: POST
+        name: getchannel
+        description: Amazon Interactive Video Service Get Channel
+        call: amazon-ivs.getchannel
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getplaybackkeypair
+      name: getplaybackkeypair
+      description: REST surface for GetPlaybackKeyPair.
+      operations:
+      - method: POST
+        name: getplaybackkeypair
+        description: Amazon Interactive Video Service Get Playback Key Pair
+        call: amazon-ivs.getplaybackkeypair
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getrecordingconfiguration
+      name: getrecordingconfiguration
+      description: REST surface for GetRecordingConfiguration.
+      operations:
+      - method: POST
+        name: getrecordingconfiguration
+        description: Amazon Interactive Video Service Get Recording Configuration
+        call: amazon-ivs.getrecordingconfiguration
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getstream
+      name: getstream
+      description: REST surface for GetStream.
+      operations:
+      - method: POST
+        name: getstream
+        description: Amazon Interactive Video Service Get Stream
+        call: amazon-ivs.getstream
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getstreamkey
+      name: getstreamkey
+      description: REST surface for GetStreamKey.
+      operations:
+      - method: POST
+        name: getstreamkey
+        description: Amazon Interactive Video Service Get Stream Key
+        call: amazon-ivs.getstreamkey
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getstreamsession
+      name: getstreamsession
+      description: REST surface for GetStreamSession.
+      operations:
+      - method: POST
+        name: getstreamsession
+        description: Amazon Interactive Video Service Get Stream Session
+        call: amazon-ivs.getstreamsession
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/importplaybackkeypair
+      name: importplaybackkeypair
+      description: REST surface for ImportPlaybackKeyPair.
+      operations:
+      - method: POST
+        name: importplaybackkeypair
+        description: Amazon Interactive Video Service Import Playback Key Pair
+        call: amazon-ivs.importplaybackkeypair
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listchannels
+      name: listchannels
+      description: REST surface for ListChannels.
+      operations:
+      - method: POST
+        name: listchannels
+        description: Amazon Interactive Video Service List Channels
+        call: amazon-ivs.listchannels
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listplaybackkeypairs
+      name: listplaybackkeypairs
+      description: REST surface for ListPlaybackKeyPairs.
+      operations:
+      - method: POST
+        name: listplaybackkeypairs
+        description: Amazon Interactive Video Service List Playback Key Pairs
+        call: amazon-ivs.listplaybackkeypairs
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listrecordingconfigurations
+      name: listrecordingconfigurations
+      description: REST surface for ListRecordingConfigurations.
+      operations:
+      - method: POST
+        name: listrecordingconfigurations
+        description: Amazon Interactive Video Service List Recording Configurations
+        call: amazon-ivs.listrecordingconfigurations
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/liststreamkeys
+      name: liststreamkeys
+      description: REST surface for ListStreamKeys.
+      operations:
+      - method: POST
+        name: liststreamkeys
+        description: Amazon Interactive Video Service List Stream Keys
+        call: amazon-ivs.liststreamkeys
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/liststreamsessions
+      name: liststreamsessions
+      description: REST surface for ListStreamSessions.
+      operations:
+      - method: POST
+        name: liststreamsessions
+        description: Amazon Interactive Video Service List Stream Sessions
+        call: amazon-ivs.liststreamsessions
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/liststreams
+      name: liststreams
+      description: REST surface for ListStreams.
+      operations:
+      - method: POST
+        name: liststreams
+        description: Amazon Interactive Video Service List Streams
+        call: amazon-ivs.liststreams
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/putmetadata
+      name: putmetadata
+      description: REST surface for PutMetadata.
+      operations:
+      - method: POST
+        name: putmetadata
+        description: Amazon Interactive Video Service Put Metadata
+        call: amazon-ivs.putmetadata
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/startviewersessionrevocation
+      name: startviewersessionrevocation
+      description: REST surface for StartViewerSessionRevocation.
+      operations:
+      - method: POST
+        name: startviewersessionrevocation
+        description: Amazon Interactive Video Service Start Viewer Session Revocation
+        call: amazon-ivs.startviewersessionrevocation
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/stopstream
+      name: stopstream
+      description: REST surface for StopStream.
+      operations:
+      - method: POST
+        name: stopstream
+        description: Amazon Interactive Video Service Stop Stream
+        call: amazon-ivs.stopstream
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/updatechannel
+      name: updatechannel
+      description: REST surface for UpdateChannel.
+      operations:
+      - method: POST
+        name: updatechannel
+        description: Amazon Interactive Video Service Update Channel
+        call: amazon-ivs.updatechannel
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags/{resourcearn}
+      name: tags-resourcearn
+      description: REST surface for tags-resourceArn.
+      operations:
+      - method: GET
+        name: listtagsforresource
+        description: Amazon Interactive Video Service List Tags for Resource
+        call: amazon-ivs.listtagsforresource
+        with:
+          resourceArn: rest.resourceArn
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: tagresource
+        description: Amazon Interactive Video Service Tag Resource
+        call: amazon-ivs.tagresource
+        with:
+          resourceArn: rest.resourceArn
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags/resourcearn-tagkeys
+      name: tags-resourcearn-tagkeys
+      description: REST surface for tags-resourceArn}#tagKeys.
+      operations:
+      - method: DELETE
+        name: untagresource
+        description: Amazon Interactive Video Service Untag Resource
+        call: amazon-ivs.untagresource
+        with:
+          resourceArn: rest.resourceArn
+          tagKeys: rest.tagKeys
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-ivs-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon Interactive Video Service. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: amazon-interactive-video-service-batch
+      description: Amazon Interactive Video Service Batch Get Channel
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.batchgetchannel
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-batch-2
+      description: Amazon Interactive Video Service Batch Get Stream Key
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.batchgetstreamkey
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-batch-3
+      description: Amazon Interactive Video Service Batch Start Viewer Session Revocation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.batchstartviewersessionrevocation
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-create
+      description: Amazon Interactive Video Service Create Channel
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.createchannel
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-create-2
+      description: Amazon Interactive Video Service Create Recording Configuration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.createrecordingconfiguration
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-create-3
+      description: Amazon Interactive Video Service Create Stream Key
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.createstreamkey
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-delete
+      description: Amazon Interactive Video Service Delete Channel
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.deletechannel
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-delete-2
+      description: Amazon Interactive Video Service Delete Playback Key Pair
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.deleteplaybackkeypair
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-delete-3
+      description: Amazon Interactive Video Service Delete Recording Configuration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.deleterecordingconfiguration
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-delete-4
+      description: Amazon Interactive Video Service Delete Stream Key
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.deletestreamkey
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-get
+      description: Amazon Interactive Video Service Get Channel
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.getchannel
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-get-2
+      description: Amazon Interactive Video Service Get Playback Key Pair
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.getplaybackkeypair
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-get-3
+      description: Amazon Interactive Video Service Get Recording Configuration
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.getrecordingconfiguration
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-get-4
+      description: Amazon Interactive Video Service Get Stream
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.getstream
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-get-5
+      description: Amazon Interactive Video Service Get Stream Key
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.getstreamkey
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-get-6
+      description: Amazon Interactive Video Service Get Stream Session
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.getstreamsession
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-import
+      description: Amazon Interactive Video Service Import Playback Key Pair
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.importplaybackkeypair
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-list
+      description: Amazon Interactive Video Service List Channels
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.listchannels
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-list-2
+      description: Amazon Interactive Video Service List Playback Key Pairs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.listplaybackkeypairs
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-list-3
+      description: Amazon Interactive Video Service List Recording Configurations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.listrecordingconfigurations
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-list-4
+      description: Amazon Interactive Video Service List Stream Keys
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.liststreamkeys
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-list-5
+      description: Amazon Interactive Video Service List Stream Sessions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.liststreamsessions
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-list-6
+      description: Amazon Interactive Video Service List Streams
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.liststreams
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-put
+      description: Amazon Interactive Video Service Put Metadata
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.putmetadata
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-start
+      description: Amazon Interactive Video Service Start Viewer Session Revocation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.startviewersessionrevocation
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-stop
+      description: Amazon Interactive Video Service Stop Stream
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.stopstream
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-update
+      description: Amazon Interactive Video Service Update Channel
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.updatechannel
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-list-7
+      description: Amazon Interactive Video Service List Tags for Resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ivs.listtagsforresource
+      with:
+        resourceArn: tools.resourceArn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-tag
+      description: Amazon Interactive Video Service Tag Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ivs.tagresource
+      with:
+        resourceArn: tools.resourceArn
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-interactive-video-service-untag
+      description: Amazon Interactive Video Service Untag Resource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-ivs.untagresource
+      with:
+        resourceArn: tools.resourceArn
+        tagKeys: tools.tagKeys
+      outputParameters:
+      - type: object
+        mapping: $.
