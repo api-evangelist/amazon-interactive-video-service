@@ -3,7 +3,7 @@ name: Amazon Interactive Video Service
 description: Amazon Interactive Video Service (Amazon IVS) is a managed live streaming solution designed to provide interactive
   video experiences. It handles the operational complexity of live streaming so you can focus on building engaging applications.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - AWS
 - Live Streaming
