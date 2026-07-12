@@ -39,6 +39,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-ivs.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-interactive-video-service-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-interactive-video-service-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-interactive-video-service-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-interactive-video-service-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/ivs/
 - type: Website
