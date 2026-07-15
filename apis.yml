@@ -39,6 +39,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-ivs.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-interactive-video-service-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-interactive-video-service-trust-center.yml
 - type: VulnerabilityDisclosure
