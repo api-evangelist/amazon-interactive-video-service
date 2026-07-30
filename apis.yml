@@ -3,7 +3,20 @@ name: Amazon Interactive Video Service
 description: Amazon Interactive Video Service (Amazon IVS) is a managed live streaming solution designed to provide interactive
   video experiences. It handles the operational complexity of live streaming so you can focus on building engaging applications.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-interactive-video-service.png
 tags:
 - AWS
 - Live Streaming
@@ -15,21 +28,595 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-interactive-video-service:aws-ivs-api
-  name: AWS Amazon IVS API
-  description: The Amazon IVS API provides programmatic control over channels, stream keys, recordings, and playback keys
-    for building interactive live streaming applications.
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-batchgetchannel-api
+  name: Amazon Interactive Video Service BatchGetChannel API
+  description: >-
+    The BatchGetChannel API from Amazon Interactive Video Service — 1 operation(s) for batchgetchannel.
   humanURL: https://aws.amazon.com/ivs/
   baseURL: https://ivs.us-east-1.amazonaws.com
   tags:
-  - Live Streaming
-  - Media
-  - Video
+  - BatchGetChannel
   properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-batchgetchannel-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-batchgetstreamkey-api
+  name: Amazon Interactive Video Service BatchGetStreamKey API
+  description: >-
+    The BatchGetStreamKey API from Amazon Interactive Video Service — 1 operation(s) for batchgetstreamkey.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - BatchGetStreamKey
+  properties:
   - type: OpenAPI
-    url: openapi/amazon-ivs-openapi-original.yml
+    url: openapi/amazon-interactive-video-service-batchgetstreamkey-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: >-
+    amazon-interactive-video-service:amazon-interactive-video-service-batchstartviewersessionrevocation-api
+  name: Amazon Interactive Video Service BatchStartViewerSessionRevocation API
+  description: >-
+    The BatchStartViewerSessionRevocation API from Amazon Interactive Video Service — 1 operation(s) for
+    batchstartviewersessionrevocation.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - BatchStartViewerSessionRevocation
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-interactive-video-service-batchstartviewersessionrevocation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-createchannel-api
+  name: Amazon Interactive Video Service CreateChannel API
+  description: >-
+    The CreateChannel API from Amazon Interactive Video Service — 1 operation(s) for createchannel.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - CreateChannel
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-createchannel-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: >-
+    amazon-interactive-video-service:amazon-interactive-video-service-createrecordingconfiguration-api
+  name: Amazon Interactive Video Service CreateRecordingConfiguration API
+  description: >-
+    The CreateRecordingConfiguration API from Amazon Interactive Video Service — 1 operation(s) for createrecordingconfiguration.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - CreateRecordingConfiguration
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-createrecordingconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-createstreamkey-api
+  name: Amazon Interactive Video Service CreateStreamKey API
+  description: >-
+    The CreateStreamKey API from Amazon Interactive Video Service — 1 operation(s) for createstreamkey.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - CreateStreamKey
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-createstreamkey-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-deletechannel-api
+  name: Amazon Interactive Video Service DeleteChannel API
+  description: >-
+    The DeleteChannel API from Amazon Interactive Video Service — 1 operation(s) for deletechannel.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - DeleteChannel
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-deletechannel-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: >-
+    amazon-interactive-video-service:amazon-interactive-video-service-deleteplaybackkeypair-api
+  name: Amazon Interactive Video Service DeletePlaybackKeyPair API
+  description: >-
+    The DeletePlaybackKeyPair API from Amazon Interactive Video Service — 1 operation(s) for deleteplaybackkeypair.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - DeletePlaybackKeyPair
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-deleteplaybackkeypair-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: >-
+    amazon-interactive-video-service:amazon-interactive-video-service-deleterecordingconfiguration-api
+  name: Amazon Interactive Video Service DeleteRecordingConfiguration API
+  description: >-
+    The DeleteRecordingConfiguration API from Amazon Interactive Video Service — 1 operation(s) for deleterecordingconfiguration.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - DeleteRecordingConfiguration
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-deleterecordingconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-deletestreamkey-api
+  name: Amazon Interactive Video Service DeleteStreamKey API
+  description: >-
+    The DeleteStreamKey API from Amazon Interactive Video Service — 1 operation(s) for deletestreamkey.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - DeleteStreamKey
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-deletestreamkey-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-getchannel-api
+  name: Amazon Interactive Video Service GetChannel API
+  description: >-
+    The GetChannel API from Amazon Interactive Video Service — 1 operation(s) for getchannel.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - GetChannel
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-getchannel-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-getplaybackkeypair-api
+  name: Amazon Interactive Video Service GetPlaybackKeyPair API
+  description: >-
+    The GetPlaybackKeyPair API from Amazon Interactive Video Service — 1 operation(s) for getplaybackkeypair.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - GetPlaybackKeyPair
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-getplaybackkeypair-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: >-
+    amazon-interactive-video-service:amazon-interactive-video-service-getrecordingconfiguration-api
+  name: Amazon Interactive Video Service GetRecordingConfiguration API
+  description: >-
+    The GetRecordingConfiguration API from Amazon Interactive Video Service — 1 operation(s) for getrecordingconfiguration.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - GetRecordingConfiguration
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-getrecordingconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-getstream-api
+  name: Amazon Interactive Video Service GetStream API
+  description: The GetStream API from Amazon Interactive Video Service — 1 operation(s) for getstream.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - GetStream
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-getstream-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-getstreamkey-api
+  name: Amazon Interactive Video Service GetStreamKey API
+  description: >-
+    The GetStreamKey API from Amazon Interactive Video Service — 1 operation(s) for getstreamkey.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - GetStreamKey
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-getstreamkey-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-getstreamsession-api
+  name: Amazon Interactive Video Service GetStreamSession API
+  description: >-
+    The GetStreamSession API from Amazon Interactive Video Service — 1 operation(s) for getstreamsession.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - GetStreamSession
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-getstreamsession-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: >-
+    amazon-interactive-video-service:amazon-interactive-video-service-importplaybackkeypair-api
+  name: Amazon Interactive Video Service ImportPlaybackKeyPair API
+  description: >-
+    The ImportPlaybackKeyPair API from Amazon Interactive Video Service — 1 operation(s) for importplaybackkeypair.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - ImportPlaybackKeyPair
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-importplaybackkeypair-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-listchannels-api
+  name: Amazon Interactive Video Service ListChannels API
+  description: >-
+    The ListChannels API from Amazon Interactive Video Service — 1 operation(s) for listchannels.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - ListChannels
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-listchannels-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: >-
+    amazon-interactive-video-service:amazon-interactive-video-service-listplaybackkeypairs-api
+  name: Amazon Interactive Video Service ListPlaybackKeyPairs API
+  description: >-
+    The ListPlaybackKeyPairs API from Amazon Interactive Video Service — 1 operation(s) for listplaybackkeypairs.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - ListPlaybackKeyPairs
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-listplaybackkeypairs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: >-
+    amazon-interactive-video-service:amazon-interactive-video-service-listrecordingconfigurations-api
+  name: Amazon Interactive Video Service ListRecordingConfigurations API
+  description: >-
+    The ListRecordingConfigurations API from Amazon Interactive Video Service — 1 operation(s) for listrecordingconfigurations.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - ListRecordingConfigurations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-listrecordingconfigurations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-liststreamkeys-api
+  name: Amazon Interactive Video Service ListStreamKeys API
+  description: >-
+    The ListStreamKeys API from Amazon Interactive Video Service — 1 operation(s) for liststreamkeys.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - ListStreamKeys
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-liststreamkeys-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-liststreams-api
+  name: Amazon Interactive Video Service ListStreams API
+  description: >-
+    The ListStreams API from Amazon Interactive Video Service — 1 operation(s) for liststreams.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - ListStreams
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-liststreams-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-liststreamsessions-api
+  name: Amazon Interactive Video Service ListStreamSessions API
+  description: >-
+    The ListStreamSessions API from Amazon Interactive Video Service — 1 operation(s) for liststreamsessions.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - ListStreamSessions
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-liststreamsessions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-putmetadata-api
+  name: Amazon Interactive Video Service PutMetadata API
+  description: >-
+    The PutMetadata API from Amazon Interactive Video Service — 1 operation(s) for putmetadata.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - PutMetadata
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-putmetadata-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: >-
+    amazon-interactive-video-service:amazon-interactive-video-service-startviewersessionrevocation-api
+  name: Amazon Interactive Video Service StartViewerSessionRevocation API
+  description: >-
+    The StartViewerSessionRevocation API from Amazon Interactive Video Service — 1 operation(s) for startviewersessionrevocation.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - StartViewerSessionRevocation
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-startviewersessionrevocation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-stopstream-api
+  name: Amazon Interactive Video Service StopStream API
+  description: >-
+    The StopStream API from Amazon Interactive Video Service — 1 operation(s) for stopstream.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - StopStream
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-stopstream-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-tags-api
+  name: Amazon Interactive Video Service Tags API
+  description: The Tags API from Amazon Interactive Video Service — 2 operation(s) for tags.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/ivs/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ivs/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-ivs.yaml
+- aid: amazon-interactive-video-service:amazon-interactive-video-service-updatechannel-api
+  name: Amazon Interactive Video Service UpdateChannel API
+  description: >-
+    The UpdateChannel API from Amazon Interactive Video Service — 1 operation(s) for updatechannel.
+  humanURL: https://aws.amazon.com/ivs/
+  baseURL: https://ivs.us-east-1.amazonaws.com
+  tags:
+  - UpdateChannel
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-interactive-video-service-updatechannel-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
   - type: GettingStarted
     url: https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html
   - type: Pricing
@@ -39,6 +626,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-ivs.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-interactive-video-service/overview
 - type: AgenticAccess
   url: agentic-access/amazon-interactive-video-service-agentic-access.yml
 - type: TrustCenter
