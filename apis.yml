@@ -47,8 +47,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-batchgetstreamkey-api
   name: Amazon Interactive Video Service BatchGetStreamKey API
   description: >-
@@ -68,8 +66,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: >-
     amazon-interactive-video-service:amazon-interactive-video-service-batchstartviewersessionrevocation-api
   name: Amazon Interactive Video Service BatchStartViewerSessionRevocation API
@@ -92,8 +88,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-createchannel-api
   name: Amazon Interactive Video Service CreateChannel API
   description: >-
@@ -113,8 +107,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: >-
     amazon-interactive-video-service:amazon-interactive-video-service-createrecordingconfiguration-api
   name: Amazon Interactive Video Service CreateRecordingConfiguration API
@@ -135,8 +127,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-createstreamkey-api
   name: Amazon Interactive Video Service CreateStreamKey API
   description: >-
@@ -156,8 +146,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-deletechannel-api
   name: Amazon Interactive Video Service DeleteChannel API
   description: >-
@@ -177,8 +165,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: >-
     amazon-interactive-video-service:amazon-interactive-video-service-deleteplaybackkeypair-api
   name: Amazon Interactive Video Service DeletePlaybackKeyPair API
@@ -199,8 +185,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: >-
     amazon-interactive-video-service:amazon-interactive-video-service-deleterecordingconfiguration-api
   name: Amazon Interactive Video Service DeleteRecordingConfiguration API
@@ -221,8 +205,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-deletestreamkey-api
   name: Amazon Interactive Video Service DeleteStreamKey API
   description: >-
@@ -242,8 +224,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-getchannel-api
   name: Amazon Interactive Video Service GetChannel API
   description: >-
@@ -263,8 +243,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-getplaybackkeypair-api
   name: Amazon Interactive Video Service GetPlaybackKeyPair API
   description: >-
@@ -284,8 +262,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: >-
     amazon-interactive-video-service:amazon-interactive-video-service-getrecordingconfiguration-api
   name: Amazon Interactive Video Service GetRecordingConfiguration API
@@ -306,8 +282,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-getstream-api
   name: Amazon Interactive Video Service GetStream API
   description: The GetStream API from Amazon Interactive Video Service — 1 operation(s) for getstream.
@@ -326,8 +300,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-getstreamkey-api
   name: Amazon Interactive Video Service GetStreamKey API
   description: >-
@@ -347,8 +319,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-getstreamsession-api
   name: Amazon Interactive Video Service GetStreamSession API
   description: >-
@@ -368,8 +338,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: >-
     amazon-interactive-video-service:amazon-interactive-video-service-importplaybackkeypair-api
   name: Amazon Interactive Video Service ImportPlaybackKeyPair API
@@ -390,8 +358,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-listchannels-api
   name: Amazon Interactive Video Service ListChannels API
   description: >-
@@ -411,8 +377,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: >-
     amazon-interactive-video-service:amazon-interactive-video-service-listplaybackkeypairs-api
   name: Amazon Interactive Video Service ListPlaybackKeyPairs API
@@ -433,8 +397,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: >-
     amazon-interactive-video-service:amazon-interactive-video-service-listrecordingconfigurations-api
   name: Amazon Interactive Video Service ListRecordingConfigurations API
@@ -455,8 +417,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-liststreamkeys-api
   name: Amazon Interactive Video Service ListStreamKeys API
   description: >-
@@ -476,8 +436,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-liststreams-api
   name: Amazon Interactive Video Service ListStreams API
   description: >-
@@ -497,8 +455,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-liststreamsessions-api
   name: Amazon Interactive Video Service ListStreamSessions API
   description: >-
@@ -518,8 +474,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-putmetadata-api
   name: Amazon Interactive Video Service PutMetadata API
   description: >-
@@ -539,8 +493,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: >-
     amazon-interactive-video-service:amazon-interactive-video-service-startviewersessionrevocation-api
   name: Amazon Interactive Video Service StartViewerSessionRevocation API
@@ -561,8 +513,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-stopstream-api
   name: Amazon Interactive Video Service StopStream API
   description: >-
@@ -582,8 +532,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-tags-api
   name: Amazon Interactive Video Service Tags API
   description: The Tags API from Amazon Interactive Video Service — 2 operation(s) for tags.
@@ -602,8 +550,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 - aid: amazon-interactive-video-service:amazon-interactive-video-service-updatechannel-api
   name: Amazon Interactive Video Service UpdateChannel API
   description: >-
@@ -623,8 +569,6 @@ apis:
     url: https://aws.amazon.com/ivs/pricing/
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ivs.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-interactive-video-service/overview
