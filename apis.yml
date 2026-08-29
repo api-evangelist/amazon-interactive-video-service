@@ -582,6 +582,9 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/ivs/faqs/
 common:
+- type: CapabilityMap
+  url: capabilities/amazon-interactive-video-service-capability-edges.yml
+  name: Amazon Interactive Video Service Business Capability Map
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-interactive-video-service/overview
 - type: AgenticAccess

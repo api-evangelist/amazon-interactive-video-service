@@ -1,0 +1,101 @@
+slug: amazon-interactive-video-service
+provider: Amazon Interactive Video Service
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Media, Entertainment & Telecom Content
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 9
+edges:
+- tag: CreateChannel
+  spec_file: amazon-interactive-video-service-createchannel-api-openapi.yml
+  capability_id: BC-3740.20
+  capability_id_l1: BC-3740
+  capability_name: OTT & Streaming Delivery
+  confidence: 0.8
+  evidence: 'CreateChannel ... schemas: IngestEndpoint, PlaybackURL, ChannelLatencyMode, StreamKey, ChannelRecordingConfigurationArn'
+  reason: Creates a live streaming channel with ingest endpoint, playback URL and latency mode on a managed
+    live streaming service — provisioning of streaming origin/live delivery for direct-to-consumer video.
+- tag: GetChannel
+  spec_file: amazon-interactive-video-service-getchannel-api-openapi.yml
+  capability_id: BC-3740.20
+  capability_id_l1: BC-3740
+  capability_name: OTT & Streaming Delivery
+  confidence: 0.8
+  evidence: 'schemas: PlaybackURL, IngestEndpoint, ChannelLatencyMode, TranscodePreset, ChannelRecordingConfigurationArn'
+  reason: Channel schema exposes ingest endpoint, playback URL, latency mode and transcode preset — plainly
+    the configuration of a live/OTT streaming origin and delivery path.
+- tag: GetStream
+  spec_file: amazon-interactive-video-service-getstream-api-openapi.yml
+  capability_id: BC-3740.20
+  capability_id_l1: BC-3740
+  capability_name: OTT & Streaming Delivery
+  confidence: 0.8
+  evidence: 'schemas: PlaybackURL, StreamHealth, StreamState, StreamViewerCount, StreamStartTime'
+  reason: Returns the state, health and playback URL of a live stream — operational monitoring of live
+    streaming delivery, not audience measurement currency.
+- tag: BatchGetChannel
+  spec_file: amazon-interactive-video-service-batchgetchannel-api-openapi.yml
+  capability_id: BC-3740.20
+  capability_id_l1: BC-3740
+  capability_name: OTT & Streaming Delivery
+  confidence: 0.75
+  evidence: 'BatchGetChannel ... schemas: PlaybackURL, IngestEndpoint, ChannelType, ChannelLatencyMode,
+    TranscodePreset'
+  reason: IVS is a 'managed live streaming solution'; a Channel here is a live streaming channel with
+    ingest endpoint and playback URL. Reading channel configuration is operation of live streaming origin/delivery,
+    i.e. OTT & Streaming Delivery.
+- tag: ListChannels
+  spec_file: amazon-interactive-video-service-listchannels-api-openapi.yml
+  capability_id: BC-3740.20
+  capability_id_l1: BC-3740
+  capability_name: OTT & Streaming Delivery
+  confidence: 0.75
+  evidence: 'schemas: ChannelSummary, ChannelList, ChannelLatencyMode, TranscodePreset, ChannelRecordingConfigurationArn'
+  reason: Lists live streaming channels with latency mode and transcode preset attributes — inventory
+    of streaming delivery channels for the live/OTT service.
+- tag: UpdateChannel
+  spec_file: amazon-interactive-video-service-updatechannel-api-openapi.yml
+  capability_id: BC-3740.20
+  capability_id_l1: BC-3740
+  capability_name: OTT & Streaming Delivery
+  confidence: 0.72
+  evidence: POST /UpdateChannel; schemas PlaybackURL, IngestEndpoint, ChannelLatencyMode, TranscodePreset,
+    IsAuthorized
+  reason: Configures the live streaming channel's ingest endpoint, playback URL, latency and transcode
+    preset — configuration of streaming origin/packaging for a direct-to-consumer live service.
+- tag: DeleteChannel
+  spec_file: amazon-interactive-video-service-deletechannel-api-openapi.yml
+  capability_id: BC-3740.20
+  capability_id_l1: BC-3740
+  capability_name: OTT & Streaming Delivery
+  confidence: 0.7
+  evidence: 'POST /DeleteChannel  DeleteChannel  Amazon Interactive Video Service Delete Channel; vendor:
+    "a managed live streaming solution"'
+  reason: An IVS channel is the live-streaming channel resource (ingest endpoint + playback URL); managing
+    its lifecycle is operation of live/OTT streaming delivery. Thin single-operation surface, hence moderate
+    confidence.
+- tag: GetStreamSession
+  spec_file: amazon-interactive-video-service-getstreamsession-api-openapi.yml
+  capability_id: BC-3740.20
+  capability_id_l1: BC-3740
+  capability_name: OTT & Streaming Delivery
+  confidence: 0.7
+  evidence: 'POST /GetStreamSession ... schemas: VideoConfiguration, IngestEndpoint, StreamId, RecordingConfigurationName'
+  reason: Returns per-session live stream details including ingest endpoint and video configuration —
+    diagnostics of live streaming delivery operations.
+- tag: ListStreams
+  spec_file: amazon-interactive-video-service-liststreams-api-openapi.yml
+  capability_id: BC-3740.20
+  capability_id_l1: BC-3740
+  capability_name: OTT & Streaming Delivery
+  confidence: 0.7
+  evidence: POST /ListStreams; schemas StreamSummary, StreamHealth, StreamState, StreamViewerCount
+  reason: Lists live streams with health, state and viewer count — operating live streaming delivery for
+    a managed live streaming service, not generic data plumbing.
