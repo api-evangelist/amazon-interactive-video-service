@@ -200,7 +200,72 @@ paths:
       tags:
       - CreateStreamKey
 components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    ServiceQuotaExceededException: {}
+    StreamKeyArn:
+      type: string
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
+    AccessDeniedException: {}
+    StreamKeyValue:
+      type: string
+      format: password
+    Tags:
+      type: object
+      minProperties: 0
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    PendingVerification: {}
+    ResourceNotFoundException: {}
     StreamKey:
       type: object
       properties:
@@ -221,12 +286,12 @@ components:
           - $ref: '#/components/schemas/StreamKeyValue'
           - description: Stream-key value.
       description: Object specifying a stream key.
-    ResourceNotFoundException: {}
-    ServiceQuotaExceededException: {}
-    StreamKeyValue:
+    ValidationException: {}
+    ChannelArn:
       type: string
-      format: password
-    AccessDeniedException: {}
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
     CreateStreamKeyResponse:
       type: object
       properties:
@@ -234,71 +299,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/StreamKey'
           - description: Stream key used to authenticate an RTMPS stream for ingestion.
-    ValidationException: {}
-    ChannelArn:
-      type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
-    PendingVerification: {}
-    StreamKeyArn:
-      type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    Tags:
-      type: object
-      minProperties: 0
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

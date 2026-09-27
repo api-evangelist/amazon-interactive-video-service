@@ -162,6 +162,44 @@ paths:
       - BatchGetStreamKey
 components:
   schemas:
+    BatchGetStreamKeyResponse:
+      type: object
+      properties:
+        errors:
+          allOf:
+          - $ref: '#/components/schemas/BatchErrors'
+          - description: <p/>
+        streamKeys:
+          allOf:
+          - $ref: '#/components/schemas/StreamKeys'
+          - description: <p/>
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    StreamKeyArn:
+      type: string
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
+    StreamKeyValue:
+      type: string
+      format: password
+    Tags:
+      type: object
+      minProperties: 0
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    ResourceArn:
+      type: string
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
+    BatchErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchError'
     errorMessage:
       type: string
     errorCode:
@@ -186,43 +224,6 @@ components:
           - $ref: '#/components/schemas/StreamKeyValue'
           - description: Stream-key value.
       description: Object specifying a stream key.
-    StreamKeyValue:
-      type: string
-      format: password
-    StreamKeys:
-      type: array
-      items:
-        $ref: '#/components/schemas/StreamKey'
-    ChannelArn:
-      type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
-    BatchGetStreamKeyResponse:
-      type: object
-      properties:
-        errors:
-          allOf:
-          - $ref: '#/components/schemas/BatchErrors'
-          - description: <p/>
-        streamKeys:
-          allOf:
-          - $ref: '#/components/schemas/StreamKeys'
-          - description: <p/>
-    StreamKeyArn:
-      type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
-    ResourceArn:
-      type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
     BatchError:
       type: object
       properties:
@@ -239,16 +240,15 @@ components:
           - $ref: '#/components/schemas/errorMessage'
           - description: Error message, determined by the application.
       description: Error related to a specific channel, specified by its ARN.
-    BatchErrors:
+    ChannelArn:
+      type: string
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
+    StreamKeys:
       type: array
       items:
-        $ref: '#/components/schemas/BatchError'
-    Tags:
-      type: object
-      minProperties: 0
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
+        $ref: '#/components/schemas/StreamKey'
   parameters:
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
@@ -256,8 +256,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -274,14 +280,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string

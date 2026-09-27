@@ -185,42 +185,21 @@ paths:
       - GetRecordingConfiguration
 components:
   schemas:
-    RecordingMode:
-      type: string
-      enum:
-      - DISABLED
-      - INTERVAL
-    RecordingConfigurationArn:
-      type: string
-      pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$
-      minLength: 0
-      maxLength: 128
-    S3DestinationConfiguration:
+    GetRecordingConfigurationResponse:
       type: object
-      required:
-      - bucketName
       properties:
-        bucketName:
+        recordingConfiguration:
           allOf:
-          - $ref: '#/components/schemas/S3DestinationBucketName'
-          - description: Location (S3 bucket name) where recorded videos will be stored.
-      description: A complex type that describes an S3 location where recorded videos will be stored.
-    RecordingConfigurationName:
+          - $ref: '#/components/schemas/RecordingConfiguration'
+          - description: <zonbook></zonbook><xhtml></xhtml>
+    RenditionConfigurationRenditionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/RenditionConfigurationRendition'
+    TagValue:
       type: string
-      pattern: ^[a-zA-Z0-9-_]*$
       minLength: 0
-      maxLength: 128
-    ResourceNotFoundException: {}
-    AccessDeniedException: {}
-    RecordingReconnectWindowSeconds:
-      type: integer
-      minimum: 0
-      maximum: 300
-    TargetIntervalSeconds:
-      type: integer
-      minimum: 1
-      maximum: 60
-    ValidationException: {}
+      maxLength: 256
     ThumbnailConfigurationResolution:
       type: string
       enum:
@@ -228,25 +207,25 @@ components:
       - HD
       - SD
       - LOWEST_RESOLUTION
-    RenditionConfigurationRendition:
+    AccessDeniedException: {}
+    InternalServerException: {}
+    Tags:
+      type: object
+      minProperties: 0
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    RecordingConfigurationState:
       type: string
       enum:
-      - FULL_HD
-      - HD
-      - SD
-      - LOWEST_RESOLUTION
-    RenditionConfiguration:
-      type: object
-      properties:
-        renditionSelection:
-          allOf:
-          - $ref: '#/components/schemas/RenditionConfigurationRenditionSelection'
-          - description: 'Indicates which set of renditions are recorded for a stream. For <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If <code>CUSTOM</code> is specified, a set of renditions must be specified in the <code>renditions</code> field. Default: <code>ALL</code>.'
-        renditions:
-          allOf:
-          - $ref: '#/components/schemas/RenditionConfigurationRenditionList'
-          - description: Indicates which renditions are recorded for a stream, if <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions are recorded if they are available during the stream. If a selected rendition is unavailable, the best available rendition is recorded. For details on the resolution dimensions of each rendition, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>.
-      description: Object that describes which renditions should be recorded for a stream.
+      - CREATING
+      - CREATE_FAILED
+      - ACTIVE
+    RecordingConfigurationArn:
+      type: string
+      pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$
+      minLength: 0
+      maxLength: 128
     RecordingConfiguration:
       type: object
       required:
@@ -287,6 +266,64 @@ components:
           - $ref: '#/components/schemas/ThumbnailConfiguration'
           - description: A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.
       description: An object representing a configuration to record a channel stream.
+    DestinationConfiguration:
+      type: object
+      properties:
+        s3:
+          allOf:
+          - $ref: '#/components/schemas/S3DestinationConfiguration'
+          - description: An S3 destination configuration where recorded videos will be stored.
+      description: A complex type that describes a location where recorded videos will be stored. Each member represents a type of destination configuration. For recording, you define one and only one type of destination configuration.
+    S3DestinationBucketName:
+      type: string
+      pattern: ^[a-z0-9-.]+$
+      minLength: 3
+      maxLength: 63
+    ThumbnailConfigurationStorage:
+      type: string
+      enum:
+      - SEQUENTIAL
+      - LATEST
+    RecordingMode:
+      type: string
+      enum:
+      - DISABLED
+      - INTERVAL
+    RecordingReconnectWindowSeconds:
+      type: integer
+      minimum: 0
+      maximum: 300
+    ThumbnailConfigurationStorageList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ThumbnailConfigurationStorage'
+    RenditionConfigurationRendition:
+      type: string
+      enum:
+      - FULL_HD
+      - HD
+      - SD
+      - LOWEST_RESOLUTION
+    S3DestinationConfiguration:
+      type: object
+      required:
+      - bucketName
+      properties:
+        bucketName:
+          allOf:
+          - $ref: '#/components/schemas/S3DestinationBucketName'
+          - description: Location (S3 bucket name) where recorded videos will be stored.
+      description: A complex type that describes an S3 location where recorded videos will be stored.
+    ResourceNotFoundException: {}
+    RecordingConfigurationName:
+      type: string
+      pattern: ^[a-zA-Z0-9-_]*$
+      minLength: 0
+      maxLength: 128
+    TargetIntervalSeconds:
+      type: integer
+      minimum: 1
+      maximum: 60
     ThumbnailConfiguration:
       type: object
       properties:
@@ -307,62 +344,25 @@ components:
           - $ref: '#/components/schemas/TargetIntervalSeconds'
           - description: '<p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p> <p> <b>Important:</b> For the <code>BASIC</code> channel type, setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>'
       description: An object representing a configuration of thumbnails for recorded video.
-    DestinationConfiguration:
-      type: object
-      properties:
-        s3:
-          allOf:
-          - $ref: '#/components/schemas/S3DestinationConfiguration'
-          - description: An S3 destination configuration where recorded videos will be stored.
-      description: A complex type that describes a location where recorded videos will be stored. Each member represents a type of destination configuration. For recording, you define one and only one type of destination configuration.
-    InternalServerException: {}
-    S3DestinationBucketName:
-      type: string
-      pattern: ^[a-z0-9-.]+$
-      minLength: 3
-      maxLength: 63
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
+    ValidationException: {}
     RenditionConfigurationRenditionSelection:
       type: string
       enum:
       - ALL
       - NONE
       - CUSTOM
-    ThumbnailConfigurationStorageList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ThumbnailConfigurationStorage'
-    GetRecordingConfigurationResponse:
+    RenditionConfiguration:
       type: object
       properties:
-        recordingConfiguration:
+        renditionSelection:
           allOf:
-          - $ref: '#/components/schemas/RecordingConfiguration'
-          - description: <zonbook></zonbook><xhtml></xhtml>
-    ThumbnailConfigurationStorage:
-      type: string
-      enum:
-      - SEQUENTIAL
-      - LATEST
-    RecordingConfigurationState:
-      type: string
-      enum:
-      - CREATING
-      - CREATE_FAILED
-      - ACTIVE
-    RenditionConfigurationRenditionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/RenditionConfigurationRendition'
-    Tags:
-      type: object
-      minProperties: 0
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
+          - $ref: '#/components/schemas/RenditionConfigurationRenditionSelection'
+          - description: 'Indicates which set of renditions are recorded for a stream. For <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If <code>CUSTOM</code> is specified, a set of renditions must be specified in the <code>renditions</code> field. Default: <code>ALL</code>.'
+        renditions:
+          allOf:
+          - $ref: '#/components/schemas/RenditionConfigurationRenditionList'
+          - description: Indicates which renditions are recorded for a stream, if <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions are recorded if they are available during the stream. If a selected rendition is unavailable, the best available rendition is recorded. For details on the resolution dimensions of each rendition, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>.
+      description: Object that describes which renditions should be recorded for a stream.
   parameters:
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
@@ -370,8 +370,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -388,14 +394,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string

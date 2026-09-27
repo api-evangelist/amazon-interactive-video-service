@@ -184,25 +184,76 @@ paths:
       tags:
       - GetStream
 components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    PlaybackURL:
-      type: string
-    StreamViewerCount:
-      type: integer
-    ResourceNotFoundException: {}
     AccessDeniedException: {}
     ChannelNotBroadcasting: {}
-    ValidationException: {}
+    StreamViewerCount:
+      type: integer
     StreamState:
       type: string
       enum:
       - LIVE
       - OFFLINE
-    ChannelArn:
+    StreamId:
       type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
+      pattern: ^st-[a-zA-Z0-9]+$
+      minLength: 26
+      maxLength: 26
+    ResourceNotFoundException: {}
+    PlaybackURL:
+      type: string
+    StreamHealth:
+      type: string
+      enum:
+      - HEALTHY
+      - STARVING
+      - UNKNOWN
+    StreamStartTime:
+      type: string
+      format: date-time
     GetStreamResponse:
       type: object
       properties:
@@ -210,14 +261,12 @@ components:
           allOf:
           - $ref: '#/components/schemas/Stream'
           - description: <p/>
-    StreamStartTime:
+    ValidationException: {}
+    ChannelArn:
       type: string
-      format: date-time
-    StreamId:
-      type: string
-      pattern: ^st-[a-zA-Z0-9]+$
-      minLength: 26
-      maxLength: 26
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
     Stream:
       type: object
       properties:
@@ -250,55 +299,6 @@ components:
           - $ref: '#/components/schemas/StreamViewerCount'
           - description: A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.
       description: Specifies a live video stream that has been ingested and distributed.
-    StreamHealth:
-      type: string
-      enum:
-      - HEALTHY
-      - STARVING
-      - UNKNOWN
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey
