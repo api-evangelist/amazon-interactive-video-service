@@ -161,56 +161,36 @@ paths:
       tags:
       - BatchGetChannel
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
     TagValue:
       type: string
       minLength: 0
       maxLength: 256
-    InsecureIngest:
-      type: boolean
+    BatchErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchError'
+    BatchGetChannelResponse:
+      type: object
+      properties:
+        channels:
+          allOf:
+          - $ref: '#/components/schemas/Channels'
+          - description: <p/>
+        errors:
+          allOf:
+          - $ref: '#/components/schemas/BatchErrors'
+          - description: Each error object is related to a specific ARN in the request.
+    ChannelName:
+      type: string
+      pattern: ^[a-zA-Z0-9-_]*$
+      minLength: 0
+      maxLength: 128
+    ResourceArn:
+      type: string
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
     Channel:
       type: object
       properties:
@@ -259,55 +239,24 @@ components:
           - $ref: '#/components/schemas/ChannelType'
           - description: '<p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.</i> Some types generate multiple qualities (renditions) from the original input; this automatically gives viewers the best experience for their devices and network conditions. Some types provide transcoded video; transcoding allows higher playback quality across a range of download speeds. Default: <code>STANDARD</code>. Valid values:</p> <ul> <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input quality to viewers. The viewer’s video-quality choice is limited to the original input. Input resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p. Original audio is passed through.</p> </li> <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default when you create a channel.</p> </li> <li> <p> <code>ADVANCED_SD</code>: Video is transcoded; multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Input resolution can be up to 1080p and bitrate can be up to 8.5 Mbps; output is capped at SD quality (480p). You can select an optional transcode preset (see below). Audio for all renditions is transcoded, and an audio-only rendition is available.</p> </li> <li> <p> <code>ADVANCED_HD</code>: Video is transcoded; multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Input resolution can be up to 1080p and bitrate can be up to 8.5 Mbps; output is capped at HD quality (720p). You can select an optional transcode preset (see below). Audio for all renditions is transcoded, and an audio-only rendition is available.</p> </li> </ul> <p>Optional <i>transcode presets</i> (available for the <code>ADVANCED</code> types) allow you to trade off available download bandwidth and video quality, to optimize the viewing experience. There are two presets:</p> <ul> <li> <p> <i>Constrained bandwidth delivery</i> uses a lower bitrate for each quality level. Use it if you have low download bandwidth and/or simple video content (e.g., talking heads)</p> </li> <li> <p> <i>Higher bandwidth delivery</i> uses a higher bitrate for each quality level. Use it if you have high download bandwidth and/or complex video content (e.g., flashes and quick scene changes).</p> </li> </ul>'
       description: Object specifying a channel.
-    ChannelName:
-      type: string
-      pattern: ^[a-zA-Z0-9-_]*$
-      minLength: 0
-      maxLength: 128
-    Tags:
-      type: object
-      minProperties: 0
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    ResourceArn:
-      type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
-    BatchGetChannelResponse:
-      type: object
-      properties:
-        channels:
-          allOf:
-          - $ref: '#/components/schemas/Channels'
-          - description: <p/>
-        errors:
-          allOf:
-          - $ref: '#/components/schemas/BatchErrors'
-          - description: Each error object is related to a specific ARN in the request.
-    IngestEndpoint:
-      type: string
-    ChannelType:
-      type: string
-      enum:
-      - BASIC
-      - STANDARD
-      - ADVANCED_SD
-      - ADVANCED_HD
-    BatchErrors:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchError'
-    errorMessage:
-      type: string
+    IsAuthorized:
+      type: boolean
+    InsecureIngest:
+      type: boolean
     TranscodePreset:
       type: string
       enum:
       - HIGHER_BANDWIDTH_DELIVERY
       - CONSTRAINED_BANDWIDTH_DELIVERY
-    errorCode:
+    ChannelLatencyMode:
       type: string
+      enum:
+      - NORMAL
+      - LOW
+    Channels:
+      type: array
+      items:
+        $ref: '#/components/schemas/Channel'
     PlaybackURL:
       type: string
     BatchError:
@@ -326,27 +275,78 @@ components:
           - $ref: '#/components/schemas/errorMessage'
           - description: Error message, determined by the application.
       description: Error related to a specific channel, specified by its ARN.
-    ChannelLatencyMode:
+    IngestEndpoint:
+      type: string
+    errorMessage:
+      type: string
+    errorCode:
+      type: string
+    ChannelType:
       type: string
       enum:
-      - NORMAL
-      - LOW
-    ChannelRecordingConfigurationArn:
-      type: string
-      pattern: ^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$
-      minLength: 0
-      maxLength: 128
+      - BASIC
+      - STANDARD
+      - ADVANCED_SD
+      - ADVANCED_HD
     ChannelArn:
       type: string
       pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
       minLength: 1
       maxLength: 128
-    IsAuthorized:
-      type: boolean
-    Channels:
-      type: array
-      items:
-        $ref: '#/components/schemas/Channel'
+    Tags:
+      type: object
+      minProperties: 0
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    ChannelRecordingConfigurationArn:
+      type: string
+      pattern: ^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$
+      minLength: 0
+      maxLength: 128
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

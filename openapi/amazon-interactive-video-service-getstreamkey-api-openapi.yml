@@ -179,17 +179,20 @@ paths:
       - GetStreamKey
 components:
   schemas:
-    ResourceNotFoundException: {}
-    AccessDeniedException: {}
-    StreamKeyValue:
+    TagValue:
       type: string
-      format: password
-    Tags:
+      minLength: 0
+      maxLength: 256
+    GetStreamKeyResponse:
       type: object
-      minProperties: 0
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
+      properties:
+        streamKey:
+          allOf:
+          - $ref: '#/components/schemas/StreamKey'
+          - description: <zonbook></zonbook><xhtml></xhtml>
+    AccessDeniedException: {}
+    ValidationException: {}
+    ResourceNotFoundException: {}
     StreamKey:
       type: object
       properties:
@@ -210,28 +213,25 @@ components:
           - $ref: '#/components/schemas/StreamKeyValue'
           - description: Stream-key value.
       description: Object specifying a stream key.
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    StreamKeyArn:
-      type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
-    ValidationException: {}
+    Tags:
+      type: object
+      minProperties: 0
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
     ChannelArn:
       type: string
       pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
       minLength: 1
       maxLength: 128
-    GetStreamKeyResponse:
-      type: object
-      properties:
-        streamKey:
-          allOf:
-          - $ref: '#/components/schemas/StreamKey'
-          - description: <zonbook></zonbook><xhtml></xhtml>
+    StreamKeyArn:
+      type: string
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
+    StreamKeyValue:
+      type: string
+      format: password
   parameters:
     X-Amz-Credential:
       name: X-Amz-Credential
@@ -251,8 +251,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -263,8 +263,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
