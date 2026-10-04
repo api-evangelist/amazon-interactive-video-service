@@ -193,9 +193,18 @@ paths:
       tags:
       - StopStream
 components:
+  schemas:
+    StopStreamResponse:
+      type: object
+      properties: {}
+    AccessDeniedException: {}
+    StreamUnavailable: {}
+    ResourceNotFoundException: {}
+    ChannelNotBroadcasting: {}
+    ValidationException: {}
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -206,14 +215,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -224,27 +233,18 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-  schemas:
-    StopStreamResponse:
-      type: object
-      properties: {}
-    AccessDeniedException: {}
-    ValidationException: {}
-    ResourceNotFoundException: {}
-    ChannelNotBroadcasting: {}
-    StreamUnavailable: {}
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

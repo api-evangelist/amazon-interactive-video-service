@@ -162,22 +162,60 @@ paths:
       - BatchGetStreamKey
 components:
   schemas:
+    errorMessage:
+      type: string
     TagValue:
       type: string
       minLength: 0
       maxLength: 256
-    BatchErrors:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchError'
+    BatchError:
+      type: object
+      properties:
+        arn:
+          allOf:
+          - $ref: '#/components/schemas/ResourceArn'
+          - description: Channel ARN.
+        code:
+          allOf:
+          - $ref: '#/components/schemas/errorCode'
+          - description: Error code.
+        message:
+          allOf:
+          - $ref: '#/components/schemas/errorMessage'
+          - description: Error message, determined by the application.
+      description: Error related to a specific channel, specified by its ARN.
     ResourceArn:
       type: string
       pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$
       minLength: 1
       maxLength: 128
+    ChannelArn:
+      type: string
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
+    BatchErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchError'
     StreamKeyValue:
       type: string
       format: password
+    Tags:
+      type: object
+      minProperties: 0
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    StreamKeyArn:
+      type: string
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
+    StreamKeys:
+      type: array
+      items:
+        $ref: '#/components/schemas/StreamKey'
     StreamKey:
       type: object
       properties:
@@ -198,31 +236,8 @@ components:
           - $ref: '#/components/schemas/StreamKeyValue'
           - description: Stream-key value.
       description: Object specifying a stream key.
-    StreamKeys:
-      type: array
-      items:
-        $ref: '#/components/schemas/StreamKey'
-    StreamKeyArn:
+    errorCode:
       type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
-    BatchError:
-      type: object
-      properties:
-        arn:
-          allOf:
-          - $ref: '#/components/schemas/ResourceArn'
-          - description: Channel ARN.
-        code:
-          allOf:
-          - $ref: '#/components/schemas/errorCode'
-          - description: Error code.
-        message:
-          allOf:
-          - $ref: '#/components/schemas/errorMessage'
-          - description: Error message, determined by the application.
-      description: Error related to a specific channel, specified by its ARN.
     BatchGetStreamKeyResponse:
       type: object
       properties:
@@ -234,21 +249,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/StreamKeys'
           - description: <p/>
-    errorMessage:
-      type: string
-    errorCode:
-      type: string
-    Tags:
-      type: object
-      minProperties: 0
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    ChannelArn:
-      type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
   parameters:
     X-Amz-Signature:
       name: X-Amz-Signature
@@ -262,8 +262,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -274,20 +274,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

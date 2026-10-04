@@ -295,54 +295,9 @@ paths:
       tags:
       - Tags
 components:
-  schemas:
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    TagKey:
-      type: string
-      minLength: 1
-      maxLength: 128
-    InternalServerException: {}
-    ValidationException: {}
-    TagResourceResponse:
-      type: object
-      properties: {}
-    ResourceNotFoundException: {}
-    Tags:
-      type: object
-      minProperties: 0
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    UntagResourceResponse:
-      type: object
-      properties: {}
-    ListTagsForResourceResponse:
-      type: object
-      required:
-      - tags
-      properties:
-        tags:
-          allOf:
-          - $ref: '#/components/schemas/Tags'
-          - description: Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -353,8 +308,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -365,12 +320,57 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    InternalServerException: {}
+    ResourceNotFoundException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    ListTagsForResourceResponse:
+      type: object
+      required:
+      - tags
+      properties:
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/Tags'
+          - description: Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+    ValidationException: {}
+    UntagResourceResponse:
+      type: object
+      properties: {}
+    TagResourceResponse:
+      type: object
+      properties: {}
+    TagKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    Tags:
+      type: object
+      minProperties: 0
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
   securitySchemes:
     hmac:
       type: apiKey
