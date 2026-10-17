@@ -185,11 +185,20 @@ paths:
       - GetStreamSession
 components:
   schemas:
-    ChannelName:
+    IngestEndpoint:
       type: string
-      pattern: ^[a-zA-Z0-9-_]*$
-      minLength: 0
-      maxLength: 128
+    IngestConfiguration:
+      type: object
+      properties:
+        audio:
+          allOf:
+          - $ref: '#/components/schemas/AudioConfiguration'
+          - description: Encoder settings for audio.
+        video:
+          allOf:
+          - $ref: '#/components/schemas/VideoConfiguration'
+          - description: Encoder settings for video.
+      description: Object specifying the ingest configuration set up by the broadcaster, usually in an encoder.
     AudioConfiguration:
       type: object
       properties:
@@ -210,6 +219,111 @@ components:
           - $ref: '#/components/schemas/Integer'
           - description: The expected ingest bitrate (bits per second). This is configured in the encoder.
       description: Object specifying a stream’s audio configuration, as set up by the broadcaster (usually in an encoder). This is part of the <a>IngestConfiguration</a> object and used for monitoring stream health.
+    VideoConfiguration:
+      type: object
+      properties:
+        avcLevel:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.
+        avcProfile:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.
+        codec:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Codec used for the video encoding.
+        encoder:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Software or hardware used to encode the video.
+        targetBitrate:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The expected ingest bitrate (bits per second). This is configured in the encoder.
+        targetFramerate:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The expected ingest framerate. This is configured in the encoder.
+        videoHeight:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: Video-resolution height in pixels.
+        videoWidth:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: Video-resolution width in pixels.
+      description: Object specifying a stream’s video configuration, as set up by the broadcaster (usually in an encoder). This is part of the <a>IngestConfiguration</a> object and used for monitoring stream health.
+    ChannelLatencyMode:
+      type: string
+      enum:
+      - NORMAL
+      - LOW
+    String:
+      type: string
+    TranscodePreset:
+      type: string
+      enum:
+      - HIGHER_BANDWIDTH_DELIVERY
+      - CONSTRAINED_BANDWIDTH_DELIVERY
+    RecordingConfigurationArn:
+      type: string
+      pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$
+      minLength: 0
+      maxLength: 128
+    ThumbnailConfigurationStorage:
+      type: string
+      enum:
+      - SEQUENTIAL
+      - LATEST
+    PlaybackURL:
+      type: string
+    IsAuthorized:
+      type: boolean
+    ValidationException: {}
+    DestinationConfiguration:
+      type: object
+      properties:
+        s3:
+          allOf:
+          - $ref: '#/components/schemas/S3DestinationConfiguration'
+          - description: An S3 destination configuration where recorded videos will be stored.
+      description: A complex type that describes a location where recorded videos will be stored. Each member represents a type of destination configuration. For recording, you define one and only one type of destination configuration.
+    TargetIntervalSeconds:
+      type: integer
+      minimum: 1
+      maximum: 60
+    ThumbnailConfigurationResolution:
+      type: string
+      enum:
+      - FULL_HD
+      - HD
+      - SD
+      - LOWEST_RESOLUTION
+    RecordingReconnectWindowSeconds:
+      type: integer
+      minimum: 0
+      maximum: 300
+    StreamId:
+      type: string
+      pattern: ^st-[a-zA-Z0-9]+$
+      minLength: 26
+      maxLength: 26
+    RenditionConfigurationRendition:
+      type: string
+      enum:
+      - FULL_HD
+      - HD
+      - SD
+      - LOWEST_RESOLUTION
+    StreamEvents:
+      type: array
+      items:
+        $ref: '#/components/schemas/StreamEvent'
+      minItems: 0
+      maxItems: 500
+    ResourceNotFoundException: {}
     Channel:
       type: object
       properties:
@@ -258,47 +372,41 @@ components:
           - $ref: '#/components/schemas/ChannelType'
           - description: '<p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.</i> Some types generate multiple qualities (renditions) from the original input; this automatically gives viewers the best experience for their devices and network conditions. Some types provide transcoded video; transcoding allows higher playback quality across a range of download speeds. Default: <code>STANDARD</code>. Valid values:</p> <ul> <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input quality to viewers. The viewer’s video-quality choice is limited to the original input. Input resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p. Original audio is passed through.</p> </li> <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default when you create a channel.</p> </li> <li> <p> <code>ADVANCED_SD</code>: Video is transcoded; multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Input resolution can be up to 1080p and bitrate can be up to 8.5 Mbps; output is capped at SD quality (480p). You can select an optional transcode preset (see below). Audio for all renditions is transcoded, and an audio-only rendition is available.</p> </li> <li> <p> <code>ADVANCED_HD</code>: Video is transcoded; multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Input resolution can be up to 1080p and bitrate can be up to 8.5 Mbps; output is capped at HD quality (720p). You can select an optional transcode preset (see below). Audio for all renditions is transcoded, and an audio-only rendition is available.</p> </li> </ul> <p>Optional <i>transcode presets</i> (available for the <code>ADVANCED</code> types) allow you to trade off available download bandwidth and video quality, to optimize the viewing experience. There are two presets:</p> <ul> <li> <p> <i>Constrained bandwidth delivery</i> uses a lower bitrate for each quality level. Use it if you have low download bandwidth and/or simple video content (e.g., talking heads)</p> </li> <li> <p> <i>Higher bandwidth delivery</i> uses a higher bitrate for each quality level. Use it if you have high download bandwidth and/or complex video content (e.g., flashes and quick scene changes).</p> </li> </ul>'
       description: Object specifying a channel.
+    RecordingConfigurationName:
+      type: string
+      pattern: ^[a-zA-Z0-9-_]*$
+      minLength: 0
+      maxLength: 128
+    ChannelName:
+      type: string
+      pattern: ^[a-zA-Z0-9-_]*$
+      minLength: 0
+      maxLength: 128
+    RecordingMode:
+      type: string
+      enum:
+      - DISABLED
+      - INTERVAL
+    Tags:
+      type: object
+      minProperties: 0
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    S3DestinationBucketName:
+      type: string
+      pattern: ^[a-z0-9-.]+$
+      minLength: 3
+      maxLength: 63
+    AccessDeniedException: {}
     RecordingConfigurationState:
       type: string
       enum:
       - CREATING
       - CREATE_FAILED
       - ACTIVE
-    TranscodePreset:
-      type: string
-      enum:
-      - HIGHER_BANDWIDTH_DELIVERY
-      - CONSTRAINED_BANDWIDTH_DELIVERY
-    ResourceNotFoundException: {}
     InsecureIngest:
       type: boolean
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    IsAuthorized:
-      type: boolean
-    S3DestinationBucketName:
-      type: string
-      pattern: ^[a-z0-9-.]+$
-      minLength: 3
-      maxLength: 63
-    S3DestinationConfiguration:
-      type: object
-      required:
-      - bucketName
-      properties:
-        bucketName:
-          allOf:
-          - $ref: '#/components/schemas/S3DestinationBucketName'
-          - description: Location (S3 bucket name) where recorded videos will be stored.
-      description: A complex type that describes an S3 location where recorded videos will be stored.
-    StreamEvents:
-      type: array
-      items:
-        $ref: '#/components/schemas/StreamEvent'
-      minItems: 0
-      maxItems: 500
     StreamSession:
       type: object
       properties:
@@ -331,102 +439,65 @@ components:
           - $ref: '#/components/schemas/StreamEvents'
           - description: List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.
       description: Object that captures the Amazon IVS configuration that the customer provisioned, the ingest configurations that the broadcaster used, and the most recent Amazon IVS stream events it encountered.
-    Integer:
-      type: integer
-    IngestConfiguration:
-      type: object
-      properties:
-        audio:
-          allOf:
-          - $ref: '#/components/schemas/AudioConfiguration'
-          - description: Encoder settings for audio.
-        video:
-          allOf:
-          - $ref: '#/components/schemas/VideoConfiguration'
-          - description: Encoder settings for video.
-      description: Object specifying the ingest configuration set up by the broadcaster, usually in an encoder.
-    ThumbnailConfigurationStorage:
-      type: string
-      enum:
-      - SEQUENTIAL
-      - LATEST
-    RenditionConfigurationRenditionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/RenditionConfigurationRendition'
-    ThumbnailConfigurationResolution:
-      type: string
-      enum:
-      - FULL_HD
-      - HD
-      - SD
-      - LOWEST_RESOLUTION
-    RecordingReconnectWindowSeconds:
-      type: integer
-      minimum: 0
-      maximum: 300
-    RecordingMode:
-      type: string
-      enum:
-      - DISABLED
-      - INTERVAL
     ChannelArn:
       type: string
       pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
       minLength: 1
       maxLength: 128
-    VideoConfiguration:
+    RenditionConfiguration:
       type: object
       properties:
-        avcLevel:
+        renditionSelection:
           allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.
-        avcProfile:
+          - $ref: '#/components/schemas/RenditionConfigurationRenditionSelection'
+          - description: 'Indicates which set of renditions are recorded for a stream. For <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If <code>CUSTOM</code> is specified, a set of renditions must be specified in the <code>renditions</code> field. Default: <code>ALL</code>.'
+        renditions:
           allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.
-        codec:
+          - $ref: '#/components/schemas/RenditionConfigurationRenditionList'
+          - description: Indicates which renditions are recorded for a stream, if <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions are recorded if they are available during the stream. If a selected rendition is unavailable, the best available rendition is recorded. For details on the resolution dimensions of each rendition, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>.
+      description: Object that describes which renditions should be recorded for a stream.
+    Integer:
+      type: integer
+    GetStreamSessionResponse:
+      type: object
+      properties:
+        streamSession:
           allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Codec used for the video encoding.
-        encoder:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Software or hardware used to encode the video.
-        targetBitrate:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The expected ingest bitrate (bits per second). This is configured in the encoder.
-        targetFramerate:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The expected ingest framerate. This is configured in the encoder.
-        videoHeight:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: Video-resolution height in pixels.
-        videoWidth:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: Video-resolution width in pixels.
-      description: Object specifying a stream’s video configuration, as set up by the broadcaster (usually in an encoder). This is part of the <a>IngestConfiguration</a> object and used for monitoring stream health.
-    ChannelRecordingConfigurationArn:
+          - $ref: '#/components/schemas/StreamSession'
+          - description: List of stream details.
+    RenditionConfigurationRenditionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/RenditionConfigurationRendition'
+    RenditionConfigurationRenditionSelection:
       type: string
-      pattern: ^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$
-      minLength: 0
-      maxLength: 128
-    PlaybackURL:
-      type: string
-    AccessDeniedException: {}
-    RecordingConfigurationName:
-      type: string
-      pattern: ^[a-zA-Z0-9-_]*$
-      minLength: 0
-      maxLength: 128
+      enum:
+      - ALL
+      - NONE
+      - CUSTOM
     Time:
       type: string
       format: date-time
+    StreamEvent:
+      type: object
+      properties:
+        eventTime:
+          allOf:
+          - $ref: '#/components/schemas/Time'
+          - description: Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Name that identifies the stream event within a <code>type</code>.
+        type:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Logical group for certain events.
+      description: Object specifying a stream’s events. For a list of events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
     RecordingConfiguration:
       type: object
       required:
@@ -467,66 +538,11 @@ components:
           - $ref: '#/components/schemas/ThumbnailConfiguration'
           - description: A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.
       description: An object representing a configuration to record a channel stream.
-    DestinationConfiguration:
-      type: object
-      properties:
-        s3:
-          allOf:
-          - $ref: '#/components/schemas/S3DestinationConfiguration'
-          - description: An S3 destination configuration where recorded videos will be stored.
-      description: A complex type that describes a location where recorded videos will be stored. Each member represents a type of destination configuration. For recording, you define one and only one type of destination configuration.
-    RenditionConfigurationRenditionSelection:
+    ChannelRecordingConfigurationArn:
       type: string
-      enum:
-      - ALL
-      - NONE
-      - CUSTOM
-    Tags:
-      type: object
-      minProperties: 0
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    StreamId:
-      type: string
-      pattern: ^st-[a-zA-Z0-9]+$
-      minLength: 26
-      maxLength: 26
-    RenditionConfigurationRendition:
-      type: string
-      enum:
-      - FULL_HD
-      - HD
-      - SD
-      - LOWEST_RESOLUTION
-    TargetIntervalSeconds:
-      type: integer
-      minimum: 1
-      maximum: 60
-    RecordingConfigurationArn:
-      type: string
-      pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$
+      pattern: ^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$
       minLength: 0
       maxLength: 128
-    StreamEvent:
-      type: object
-      properties:
-        eventTime:
-          allOf:
-          - $ref: '#/components/schemas/Time'
-          - description: Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
-        name:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Name that identifies the stream event within a <code>type</code>.
-        type:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Logical group for certain events.
-      description: Object specifying a stream’s events. For a list of events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.
-    String:
-      type: string
-    ValidationException: {}
     ChannelType:
       type: string
       enum:
@@ -534,6 +550,16 @@ components:
       - STANDARD
       - ADVANCED_SD
       - ADVANCED_HD
+    S3DestinationConfiguration:
+      type: object
+      required:
+      - bucketName
+      properties:
+        bucketName:
+          allOf:
+          - $ref: '#/components/schemas/S3DestinationBucketName'
+          - description: Location (S3 bucket name) where recorded videos will be stored.
+      description: A complex type that describes an S3 location where recorded videos will be stored.
     ThumbnailConfiguration:
       type: object
       properties:
@@ -554,51 +580,13 @@ components:
           - $ref: '#/components/schemas/TargetIntervalSeconds'
           - description: '<p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p> <p> <b>Important:</b> For the <code>BASIC</code> channel type, setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>'
       description: An object representing a configuration of thumbnails for recorded video.
-    ChannelLatencyMode:
-      type: string
-      enum:
-      - NORMAL
-      - LOW
-    GetStreamSessionResponse:
-      type: object
-      properties:
-        streamSession:
-          allOf:
-          - $ref: '#/components/schemas/StreamSession'
-          - description: List of stream details.
-    RenditionConfiguration:
-      type: object
-      properties:
-        renditionSelection:
-          allOf:
-          - $ref: '#/components/schemas/RenditionConfigurationRenditionSelection'
-          - description: 'Indicates which set of renditions are recorded for a stream. For <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If <code>CUSTOM</code> is specified, a set of renditions must be specified in the <code>renditions</code> field. Default: <code>ALL</code>.'
-        renditions:
-          allOf:
-          - $ref: '#/components/schemas/RenditionConfigurationRenditionList'
-          - description: Indicates which renditions are recorded for a stream, if <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions are recorded if they are available during the stream. If a selected rendition is unavailable, the best available rendition is recorded. For details on the resolution dimensions of each rendition, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>.
-      description: Object that describes which renditions should be recorded for a stream.
-    IngestEndpoint:
-      type: string
     ThumbnailConfigurationStorageList:
       type: array
       items:
         $ref: '#/components/schemas/ThumbnailConfigurationStorage'
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -609,14 +597,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

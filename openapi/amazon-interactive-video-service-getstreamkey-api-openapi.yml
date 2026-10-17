@@ -178,26 +178,57 @@ paths:
       tags:
       - GetStreamKey
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    StreamKeyArn:
-      type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
+    AccessDeniedException: {}
+    ResourceNotFoundException: {}
     ChannelArn:
       type: string
       pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
       minLength: 1
       maxLength: 128
-    StreamKeyValue:
-      type: string
-      format: password
-    AccessDeniedException: {}
-    ResourceNotFoundException: {}
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
     StreamKey:
       type: object
       properties:
@@ -219,6 +250,11 @@ components:
           - description: Stream-key value.
       description: Object specifying a stream key.
     ValidationException: {}
+    StreamKeyArn:
+      type: string
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
     GetStreamKeyResponse:
       type: object
       properties:
@@ -232,49 +268,13 @@ components:
       maxProperties: 50
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    StreamKeyValue:
+      type: string
+      format: password
   securitySchemes:
     hmac:
       type: apiKey

@@ -191,6 +191,18 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
@@ -203,18 +215,6 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
@@ -222,6 +222,9 @@ components:
         type: string
       required: false
   schemas:
+    PlaybackKeyPairFingerprint:
+      type: string
+    AccessDeniedException: {}
     PlaybackKeyPair:
       type: object
       properties:
@@ -242,20 +245,7 @@ components:
           - $ref: '#/components/schemas/Tags'
           - description: Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
       description: A key pair used to sign and validate a playback authorization token.
-    PlaybackKeyPairFingerprint:
-      type: string
-    AccessDeniedException: {}
     ResourceNotFoundException: {}
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    PlaybackKeyPairArn:
-      type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:playback-key/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
-    ValidationException: {}
     GetPlaybackKeyPairResponse:
       type: object
       properties:
@@ -263,17 +253,27 @@ components:
           allOf:
           - $ref: '#/components/schemas/PlaybackKeyPair'
           - description: <zonbook></zonbook><xhtml></xhtml>
+    PlaybackKeyPairArn:
+      type: string
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:playback-key/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
     PlaybackKeyPairName:
       type: string
       pattern: ^[a-zA-Z0-9-_]*$
       minLength: 0
       maxLength: 128
+    ValidationException: {}
     Tags:
       type: object
       minProperties: 0
       maxProperties: 50
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
   securitySchemes:
     hmac:
       type: apiKey

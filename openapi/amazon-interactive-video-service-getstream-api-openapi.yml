@@ -185,6 +185,18 @@ paths:
       - GetStream
 components:
   parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
@@ -203,20 +215,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -228,13 +228,26 @@ components:
         type: string
       required: false
   schemas:
-    ResourceNotFoundException: {}
     StreamStartTime:
       type: string
       format: date-time
-    ChannelNotBroadcasting: {}
-    StreamViewerCount:
-      type: integer
+    GetStreamResponse:
+      type: object
+      properties:
+        stream:
+          allOf:
+          - $ref: '#/components/schemas/Stream'
+          - description: <p/>
+    PlaybackURL:
+      type: string
+    ValidationException: {}
+    StreamId:
+      type: string
+      pattern: ^st-[a-zA-Z0-9]+$
+      minLength: 26
+      maxLength: 26
+    ResourceNotFoundException: {}
+    AccessDeniedException: {}
     StreamState:
       type: string
       enum:
@@ -245,15 +258,8 @@ components:
       pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
       minLength: 1
       maxLength: 128
-    AccessDeniedException: {}
-    StreamHealth:
-      type: string
-      enum:
-      - HEALTHY
-      - STARVING
-      - UNKNOWN
-    PlaybackURL:
-      type: string
+    StreamViewerCount:
+      type: integer
     Stream:
       type: object
       properties:
@@ -286,19 +292,13 @@ components:
           - $ref: '#/components/schemas/StreamViewerCount'
           - description: A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.
       description: Specifies a live video stream that has been ingested and distributed.
-    StreamId:
+    StreamHealth:
       type: string
-      pattern: ^st-[a-zA-Z0-9]+$
-      minLength: 26
-      maxLength: 26
-    ValidationException: {}
-    GetStreamResponse:
-      type: object
-      properties:
-        stream:
-          allOf:
-          - $ref: '#/components/schemas/Stream'
-          - description: <p/>
+      enum:
+      - HEALTHY
+      - STARVING
+      - UNKNOWN
+    ChannelNotBroadcasting: {}
   securitySchemes:
     hmac:
       type: apiKey

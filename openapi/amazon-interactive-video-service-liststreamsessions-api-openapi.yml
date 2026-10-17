@@ -201,14 +201,77 @@ paths:
       tags:
       - ListStreamSessions
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    AccessDeniedException: {}
     StreamId:
       type: string
       pattern: ^st-[a-zA-Z0-9]+$
       minLength: 26
       maxLength: 26
-    AccessDeniedException: {}
     ResourceNotFoundException: {}
+    ListStreamSessionsResponse:
+      type: object
+      required:
+      - streamSessions
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.
+        streamSessions:
+          allOf:
+          - $ref: '#/components/schemas/StreamSessionList'
+          - description: List of stream sessions.
+    Boolean:
+      type: boolean
+    PaginationToken:
+      type: string
+      pattern: ^[a-zA-Z0-9+/=_-]*$
+      minLength: 0
+      maxLength: 1024
     StreamSessionSummary:
       type: object
       properties:
@@ -229,77 +292,14 @@ components:
           - $ref: '#/components/schemas/StreamId'
           - description: Unique identifier for a live or previously live stream in the specified channel.
       description: Summary information about a stream session.
-    Boolean:
-      type: boolean
-    PaginationToken:
-      type: string
-      pattern: ^[a-zA-Z0-9+/=_-]*$
-      minLength: 0
-      maxLength: 1024
-    ValidationException: {}
-    Time:
-      type: string
-      format: date-time
     StreamSessionList:
       type: array
       items:
         $ref: '#/components/schemas/StreamSessionSummary'
-    ListStreamSessionsResponse:
-      type: object
-      required:
-      - streamSessions
-      properties:
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.
-        streamSessions:
-          allOf:
-          - $ref: '#/components/schemas/StreamSessionList'
-          - description: List of stream sessions.
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
+    ValidationException: {}
+    Time:
+      type: string
+      format: date-time
   securitySchemes:
     hmac:
       type: apiKey

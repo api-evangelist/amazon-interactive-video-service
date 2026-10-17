@@ -219,6 +219,18 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
@@ -231,18 +243,6 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
@@ -250,15 +250,15 @@ components:
         type: string
       required: false
   schemas:
-    PendingVerification: {}
-    InternalServerException: {}
     AccessDeniedException: {}
+    InternalServerException: {}
     ResourceNotFoundException: {}
+    PendingVerification: {}
     StartViewerSessionRevocationResponse:
       type: object
       properties: {}
-    ValidationException: {}
     ThrottlingException: {}
+    ValidationException: {}
   securitySchemes:
     hmac:
       type: apiKey

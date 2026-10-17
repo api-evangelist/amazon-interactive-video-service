@@ -161,13 +161,105 @@ paths:
       tags:
       - BatchGetStreamKey
 components:
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    errorCode:
+      type: string
+    StreamKeyArn:
+      type: string
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
+    Tags:
+      type: object
+      minProperties: 0
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    StreamKeyValue:
+      type: string
+      format: password
+    ChannelArn:
+      type: string
+      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
+      minLength: 1
+      maxLength: 128
+    StreamKeys:
+      type: array
+      items:
+        $ref: '#/components/schemas/StreamKey'
     errorMessage:
       type: string
+    BatchErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchError'
     TagValue:
       type: string
       minLength: 0
       maxLength: 256
+    StreamKey:
+      type: object
+      properties:
+        arn:
+          allOf:
+          - $ref: '#/components/schemas/StreamKeyArn'
+          - description: Stream-key ARN.
+        channelArn:
+          allOf:
+          - $ref: '#/components/schemas/ChannelArn'
+          - description: Channel ARN for the stream.
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/Tags'
+          - description: Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/StreamKeyValue'
+          - description: Stream-key value.
+      description: Object specifying a stream key.
     BatchError:
       type: object
       properties:
@@ -189,55 +281,6 @@ components:
       pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$
       minLength: 1
       maxLength: 128
-    ChannelArn:
-      type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
-    BatchErrors:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchError'
-    StreamKeyValue:
-      type: string
-      format: password
-    Tags:
-      type: object
-      minProperties: 0
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    StreamKeyArn:
-      type: string
-      pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$
-      minLength: 1
-      maxLength: 128
-    StreamKeys:
-      type: array
-      items:
-        $ref: '#/components/schemas/StreamKey'
-    StreamKey:
-      type: object
-      properties:
-        arn:
-          allOf:
-          - $ref: '#/components/schemas/StreamKeyArn'
-          - description: Stream-key ARN.
-        channelArn:
-          allOf:
-          - $ref: '#/components/schemas/ChannelArn'
-          - description: Channel ARN for the stream.
-        tags:
-          allOf:
-          - $ref: '#/components/schemas/Tags'
-          - description: Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/StreamKeyValue'
-          - description: Stream-key value.
-      description: Object specifying a stream key.
-    errorCode:
-      type: string
     BatchGetStreamKeyResponse:
       type: object
       properties:
@@ -249,49 +292,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/StreamKeys'
           - description: <p/>
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

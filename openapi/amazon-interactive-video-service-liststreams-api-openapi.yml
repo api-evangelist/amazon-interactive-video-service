@@ -195,77 +195,7 @@ paths:
       tags:
       - ListStreams
 components:
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ListStreamsResponse:
-      type: object
-      required:
-      - streams
-      properties:
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.
-        streams:
-          allOf:
-          - $ref: '#/components/schemas/StreamList'
-          - description: List of streams.
-    StreamStartTime:
-      type: string
-      format: date-time
-    StreamViewerCount:
-      type: integer
-    StreamList:
-      type: array
-      items:
-        $ref: '#/components/schemas/StreamSummary'
-    StreamState:
-      type: string
-      enum:
-      - LIVE
-      - OFFLINE
     StreamSummary:
       type: object
       properties:
@@ -294,29 +224,99 @@ components:
           - $ref: '#/components/schemas/StreamViewerCount'
           - description: A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.
       description: Summary information about a stream.
+    StreamStartTime:
+      type: string
+      format: date-time
+    ValidationException: {}
+    ListStreamsResponse:
+      type: object
+      required:
+      - streams
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.
+        streams:
+          allOf:
+          - $ref: '#/components/schemas/StreamList'
+          - description: List of streams.
+    StreamId:
+      type: string
+      pattern: ^st-[a-zA-Z0-9]+$
+      minLength: 26
+      maxLength: 26
+    AccessDeniedException: {}
+    StreamState:
+      type: string
+      enum:
+      - LIVE
+      - OFFLINE
     ChannelArn:
       type: string
       pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
       minLength: 1
       maxLength: 128
-    AccessDeniedException: {}
+    StreamViewerCount:
+      type: integer
     StreamHealth:
       type: string
       enum:
       - HEALTHY
       - STARVING
       - UNKNOWN
-    StreamId:
-      type: string
-      pattern: ^st-[a-zA-Z0-9]+$
-      minLength: 26
-      maxLength: 26
+    StreamList:
+      type: array
+      items:
+        $ref: '#/components/schemas/StreamSummary'
     PaginationToken:
       type: string
       pattern: ^[a-zA-Z0-9+/=_-]*$
       minLength: 0
       maxLength: 1024
-    ValidationException: {}
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

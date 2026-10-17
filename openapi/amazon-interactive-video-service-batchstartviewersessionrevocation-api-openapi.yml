@@ -186,20 +186,7 @@ paths:
       - BatchStartViewerSessionRevocation
 components:
   schemas:
-    errorMessage:
-      type: string
     PendingVerification: {}
-    ViewerId:
-      type: string
-      minLength: 1
-      maxLength: 40
-    BatchStartViewerSessionRevocationErrors:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchStartViewerSessionRevocationError'
-    ViewerSessionVersion:
-      type: integer
-      minimum: 0
     BatchStartViewerSessionRevocationResponse:
       type: object
       properties:
@@ -207,31 +194,24 @@ components:
           allOf:
           - $ref: '#/components/schemas/BatchStartViewerSessionRevocationErrors'
           - description: Each error object is related to a specific <code>channelArn</code> and <code>viewerId</code> pair in the request.
-    BatchStartViewerSessionRevocationViewerSession:
-      type: object
-      required:
-      - channelArn
-      - viewerId
-      properties:
-        channelArn:
-          allOf:
-          - $ref: '#/components/schemas/ChannelArn'
-          - description: The ARN of the channel associated with the viewer session to revoke.
-        viewerId:
-          allOf:
-          - $ref: '#/components/schemas/ViewerId'
-          - description: The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.
-        viewerSessionVersionsLessThanOrEqualTo:
-          allOf:
-          - $ref: '#/components/schemas/ViewerSessionVersion'
-          - description: 'An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.'
-      description: A viewer session to revoke in the call to <a>BatchStartViewerSessionRevocation</a>.
+    ValidationException: {}
+    ViewerId:
+      type: string
+      minLength: 1
+      maxLength: 40
+    errorCode:
+      type: string
+    ThrottlingException: {}
+    BatchStartViewerSessionRevocationErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchStartViewerSessionRevocationError'
+    AccessDeniedException: {}
     ChannelArn:
       type: string
       pattern: ^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$
       minLength: 1
       maxLength: 128
-    AccessDeniedException: {}
     BatchStartViewerSessionRevocationError:
       type: object
       required:
@@ -255,11 +235,43 @@ components:
           - $ref: '#/components/schemas/ViewerId'
           - description: The ID of the viewer session to revoke.
       description: Error for a request in the batch for BatchStartViewerSessionRevocation. Each error is related to a specific channel-ARN and viewer-ID pair.
-    ValidationException: {}
-    errorCode:
+    errorMessage:
       type: string
-    ThrottlingException: {}
+    ViewerSessionVersion:
+      type: integer
+      minimum: 0
+    BatchStartViewerSessionRevocationViewerSession:
+      type: object
+      required:
+      - channelArn
+      - viewerId
+      properties:
+        channelArn:
+          allOf:
+          - $ref: '#/components/schemas/ChannelArn'
+          - description: The ARN of the channel associated with the viewer session to revoke.
+        viewerId:
+          allOf:
+          - $ref: '#/components/schemas/ViewerId'
+          - description: The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.
+        viewerSessionVersionsLessThanOrEqualTo:
+          allOf:
+          - $ref: '#/components/schemas/ViewerSessionVersion'
+          - description: 'An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.'
+      description: A viewer session to revoke in the call to <a>BatchStartViewerSessionRevocation</a>.
   parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
@@ -278,20 +290,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
