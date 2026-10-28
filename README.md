@@ -1,4 +1,4 @@
-# Amazon Interactive Video Service (amazon-interactive-video-service)
+# Amazon Interactive Video Service
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,127 +66,288 @@
 
 Amazon Interactive Video Service (Amazon IVS) is a managed live streaming solution designed to provide interactive video experiences. It handles the operational complexity of live streaming so you can focus on building engaging applications.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/amazon-interactive-video-service/refs/heads/main/apis.yml)
+**Areas:** AWS · Live Streaming · Media · Video · Real-Time
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon Interactive Video Service on APIs.io
 
-## Tags:
+Everything profiled for Amazon Interactive Video Service is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-interactive-video-service/](https://apis.io/providers/amazon-interactive-video-service/)** — or go straight to one of the APIs or properties below.
 
- - AWS, Live Streaming, Media, Video, Real-Time
+### APIs (29)
 
-## Timestamps
+- [Amazon Interactive Video Service BatchGetChannel API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-batchgetchannel-api/) — The BatchGetChannel API from Amazon Interactive Video Service — 1 operation(s) for batchgetchannel.
+- [Amazon Interactive Video Service BatchGetStreamKey API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-batchgetstreamkey-api/) — The BatchGetStreamKey API from Amazon Interactive Video Service — 1 operation(s) for batchgetstreamkey.
+- [Amazon Interactive Video Service BatchStartViewerSessionRevocation API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-batchstartviewersessionrevocation-api/) — The BatchStartViewerSessionRevocation API from Amazon Interactive Video Service — 1 operation(s) for batchstartviewersessionrevocation.
+- [Amazon Interactive Video Service CreateChannel API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-createchannel-api/) — The CreateChannel API from Amazon Interactive Video Service — 1 operation(s) for createchannel.
+- [Amazon Interactive Video Service CreateRecordingConfiguration API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-createrecordingconfiguration-api/) — The CreateRecordingConfiguration API from Amazon Interactive Video Service — 1 operation(s) for createrecordingconfiguration.
+- [Amazon Interactive Video Service CreateStreamKey API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-createstreamkey-api/) — The CreateStreamKey API from Amazon Interactive Video Service — 1 operation(s) for createstreamkey.
+- [Amazon Interactive Video Service DeleteChannel API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-deletechannel-api/) — The DeleteChannel API from Amazon Interactive Video Service — 1 operation(s) for deletechannel.
+- [Amazon Interactive Video Service DeletePlaybackKeyPair API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-deleteplaybackkeypair-api/) — The DeletePlaybackKeyPair API from Amazon Interactive Video Service — 1 operation(s) for deleteplaybackkeypair.
+- [Amazon Interactive Video Service DeleteRecordingConfiguration API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-deleterecordingconfiguration-api/) — The DeleteRecordingConfiguration API from Amazon Interactive Video Service — 1 operation(s) for deleterecordingconfiguration.
+- [Amazon Interactive Video Service DeleteStreamKey API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-deletestreamkey-api/) — The DeleteStreamKey API from Amazon Interactive Video Service — 1 operation(s) for deletestreamkey.
+- [Amazon Interactive Video Service GetChannel API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-getchannel-api/) — The GetChannel API from Amazon Interactive Video Service — 1 operation(s) for getchannel.
+- [Amazon Interactive Video Service GetPlaybackKeyPair API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-getplaybackkeypair-api/) — The GetPlaybackKeyPair API from Amazon Interactive Video Service — 1 operation(s) for getplaybackkeypair.
+- [Amazon Interactive Video Service GetRecordingConfiguration API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-getrecordingconfiguration-api/) — The GetRecordingConfiguration API from Amazon Interactive Video Service — 1 operation(s) for getrecordingconfiguration.
+- [Amazon Interactive Video Service GetStream API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-getstream-api/) — The GetStream API from Amazon Interactive Video Service — 1 operation(s) for getstream.
+- [Amazon Interactive Video Service GetStreamKey API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-getstreamkey-api/) — The GetStreamKey API from Amazon Interactive Video Service — 1 operation(s) for getstreamkey.
+- [Amazon Interactive Video Service GetStreamSession API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-getstreamsession-api/) — The GetStreamSession API from Amazon Interactive Video Service — 1 operation(s) for getstreamsession.
+- [Amazon Interactive Video Service ImportPlaybackKeyPair API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-importplaybackkeypair-api/) — The ImportPlaybackKeyPair API from Amazon Interactive Video Service — 1 operation(s) for importplaybackkeypair.
+- [Amazon Interactive Video Service ListChannels API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-listchannels-api/) — The ListChannels API from Amazon Interactive Video Service — 1 operation(s) for listchannels.
+- [Amazon Interactive Video Service ListPlaybackKeyPairs API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-listplaybackkeypairs-api/) — The ListPlaybackKeyPairs API from Amazon Interactive Video Service — 1 operation(s) for listplaybackkeypairs.
+- [Amazon Interactive Video Service ListRecordingConfigurations API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-listrecordingconfigurations-api/) — The ListRecordingConfigurations API from Amazon Interactive Video Service — 1 operation(s) for listrecordingconfigurations.
+- [Amazon Interactive Video Service ListStreamKeys API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-liststreamkeys-api/) — The ListStreamKeys API from Amazon Interactive Video Service — 1 operation(s) for liststreamkeys.
+- [Amazon Interactive Video Service ListStreams API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-liststreams-api/) — The ListStreams API from Amazon Interactive Video Service — 1 operation(s) for liststreams.
+- [Amazon Interactive Video Service ListStreamSessions API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-liststreamsessions-api/) — The ListStreamSessions API from Amazon Interactive Video Service — 1 operation(s) for liststreamsessions.
+- [Amazon Interactive Video Service PutMetadata API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-putmetadata-api/) — The PutMetadata API from Amazon Interactive Video Service — 1 operation(s) for putmetadata.
+- [Amazon Interactive Video Service StartViewerSessionRevocation API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-startviewersessionrevocation-api/) — The StartViewerSessionRevocation API from Amazon Interactive Video Service — 1 operation(s) for startviewersessionrevocation.
+- [Amazon Interactive Video Service StopStream API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-stopstream-api/) — The StopStream API from Amazon Interactive Video Service — 1 operation(s) for stopstream.
+- [Amazon Interactive Video Service Tags API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-tags-api/) — The Tags API from Amazon Interactive Video Service — 2 operation(s) for tags.
+- [Amazon Interactive Video Service UpdateChannel API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-updatechannel-api/) — The UpdateChannel API from Amazon Interactive Video Service — 1 operation(s) for updatechannel.
+- [Amazon Interactive Video Service Interactive Video Service Operations API](https://apis.io/apis/amazon-interactive-video-service/amazon-interactive-video-service-operations-api/) — The Interactive Video Service Operations API from Amazon Interactive Video Service — 67 operation(s) for interactive video service operations.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### AWS Amazon IVS API
-The Amazon IVS API provides programmatic control over channels, stream keys, recordings, and playback keys for building interactive live streaming applications.
+#### Agentic access (1)
 
-**Human URL:** [https://aws.amazon.com/ivs/](https://aws.amazon.com/ivs/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Amazon Interactive Video Service Agentic Access](https://apis.io/agentic-access/amazon-interactive-video-service/amazon-interactive-video-service-agentic-access/)
 
- - Live Streaming, Media, Video
+#### JSON Schema (109)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html)
-- [OpenAPI](openapi/amazon-ivs-openapi-original.yml)
-- [GettingStarted](https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html)
-- [Pricing](https://aws.amazon.com/ivs/pricing/)
-- [FAQ](https://aws.amazon.com/ivs/faqs/)
+- [AudioConfiguration](https://apis.io/schemas/amazon-interactive-video-service/ivs-audio-configuration/)
+- [BatchError](https://apis.io/schemas/amazon-interactive-video-service/ivs-batch-error/)
+- [BatchErrors](https://apis.io/schemas/amazon-interactive-video-service/ivs-batch-errors/)
+- [BatchGetChannelRequest](https://apis.io/schemas/amazon-interactive-video-service/ivs-batch-get-channel-request/)
+- [BatchGetChannelResponse](https://apis.io/schemas/amazon-interactive-video-service/ivs-batch-get-channel-response/)
+- [BatchGetStreamKeyRequest](https://apis.io/schemas/amazon-interactive-video-service/ivs-batch-get-stream-key-request/)
+- [BatchGetStreamKeyResponse](https://apis.io/schemas/amazon-interactive-video-service/ivs-batch-get-stream-key-response/)
+- [BatchStartViewerSessionRevocationError](https://apis.io/schemas/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-error/)
+- [BatchStartViewerSessionRevocationErrors](https://apis.io/schemas/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-errors/)
+- [BatchStartViewerSessionRevocationRequest](https://apis.io/schemas/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-request/)
+- [BatchStartViewerSessionRevocationResponse](https://apis.io/schemas/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-response/)
+- [BatchStartViewerSessionRevocationViewerSession](https://apis.io/schemas/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-viewer-session/)
+- [BatchStartViewerSessionRevocationViewerSessionList](https://apis.io/schemas/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-viewer-session-list/)
+- [Channel](https://apis.io/schemas/amazon-interactive-video-service/ivs-channel/)
+- [ChannelArnList](https://apis.io/schemas/amazon-interactive-video-service/ivs-channel-arn-list/)
+- [ChannelLatencyMode](https://apis.io/schemas/amazon-interactive-video-service/ivs-channel-latency-mode/)
+- [ChannelList](https://apis.io/schemas/amazon-interactive-video-service/ivs-channel-list/)
+- [ChannelSummary](https://apis.io/schemas/amazon-interactive-video-service/ivs-channel-summary/)
+- [ChannelType](https://apis.io/schemas/amazon-interactive-video-service/ivs-channel-type/)
+- [Channels](https://apis.io/schemas/amazon-interactive-video-service/ivs-channels/)
+- [CreateChannelRequest](https://apis.io/schemas/amazon-interactive-video-service/ivs-create-channel-request/)
+- [CreateChannelResponse](https://apis.io/schemas/amazon-interactive-video-service/ivs-create-channel-response/)
+- [CreateRecordingConfigurationRequest](https://apis.io/schemas/amazon-interactive-video-service/ivs-create-recording-configuration-request/)
+- [CreateRecordingConfigurationResponse](https://apis.io/schemas/amazon-interactive-video-service/ivs-create-recording-configuration-response/)
+- [CreateStreamKeyRequest](https://apis.io/schemas/amazon-interactive-video-service/ivs-create-stream-key-request/)
+- …and 84 more published on APIs.io
 
-## Common Properties
+#### JSON Structure (109)
 
-- [Portal](https://aws.amazon.com/ivs/)
+Data models expressed in JSON Structure.
+
+- [Ivs Audio Configuration Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-audio-configuration-structure/)
+- [Ivs Batch Error Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-batch-error-structure/)
+- [Ivs Batch Errors Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-batch-errors-structure/)
+- [Ivs Batch Get Channel Request Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-batch-get-channel-request-structure/)
+- [Ivs Batch Get Channel Response Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-batch-get-channel-response-structure/)
+- [Ivs Batch Get Stream Key Request Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-batch-get-stream-key-request-structure/)
+- [Ivs Batch Get Stream Key Response Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-batch-get-stream-key-response-structure/)
+- [Ivs Batch Start Viewer Session Revocation Error Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-error-structure/)
+- [Ivs Batch Start Viewer Session Revocation Errors Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-errors-structure/)
+- [Ivs Batch Start Viewer Session Revocation Request Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-request-structure/)
+- [Ivs Batch Start Viewer Session Revocation Response Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-response-structure/)
+- [Ivs Batch Start Viewer Session Revocation Viewer Session List Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-viewer-session-list-structure/)
+- [Ivs Batch Start Viewer Session Revocation Viewer Session Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-viewer-session-structure/)
+- [Ivs Channel Arn List Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-channel-arn-list-structure/)
+- [Ivs Channel Latency Mode Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-channel-latency-mode-structure/)
+- [Ivs Channel List Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-channel-list-structure/)
+- [Ivs Channel Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-channel-structure/)
+- [Ivs Channel Summary Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-channel-summary-structure/)
+- [Ivs Channel Type Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-channel-type-structure/)
+- [Ivs Channels Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-channels-structure/)
+- [Ivs Create Channel Request Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-create-channel-request-structure/)
+- [Ivs Create Channel Response Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-create-channel-response-structure/)
+- [Ivs Create Recording Configuration Request Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-create-recording-configuration-request-structure/)
+- [Ivs Create Recording Configuration Response Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-create-recording-configuration-response-structure/)
+- [Ivs Create Stream Key Request Structure](https://apis.io/json-structure/amazon-interactive-video-service/ivs-create-stream-key-request-structure/)
+- …and 84 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Interactive Video Service Context](https://apis.io/jsonld/amazon-interactive-video-service/amazon-interactive-video-service-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Interactive Video Service Vocabulary](https://apis.io/vocabularies/amazon-interactive-video-service/amazon-interactive-video-service-vocabulary/)
+
+#### Examples (98)
+
+Example requests and responses.
+
+- [Ivs Audio Configuration Example](https://apis.io/examples/amazon-interactive-video-service/ivs-audio-configuration-example/)
+- [Ivs Batch Error Example](https://apis.io/examples/amazon-interactive-video-service/ivs-batch-error-example/)
+- [Ivs Batch Errors Example](https://apis.io/examples/amazon-interactive-video-service/ivs-batch-errors-example/)
+- [Ivs Batch Get Channel Request Example](https://apis.io/examples/amazon-interactive-video-service/ivs-batch-get-channel-request-example/)
+- [Ivs Batch Get Channel Response Example](https://apis.io/examples/amazon-interactive-video-service/ivs-batch-get-channel-response-example/)
+- [Ivs Batch Get Stream Key Request Example](https://apis.io/examples/amazon-interactive-video-service/ivs-batch-get-stream-key-request-example/)
+- [Ivs Batch Get Stream Key Response Example](https://apis.io/examples/amazon-interactive-video-service/ivs-batch-get-stream-key-response-example/)
+- [Ivs Batch Start Viewer Session Revocation Error Example](https://apis.io/examples/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-error-example/)
+- [Ivs Batch Start Viewer Session Revocation Errors Example](https://apis.io/examples/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-errors-example/)
+- [Ivs Batch Start Viewer Session Revocation Request Example](https://apis.io/examples/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-request-example/)
+- [Ivs Batch Start Viewer Session Revocation Response Example](https://apis.io/examples/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-response-example/)
+- [Ivs Batch Start Viewer Session Revocation Viewer Session Example](https://apis.io/examples/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-viewer-session-example/)
+- [Ivs Batch Start Viewer Session Revocation Viewer Session List Example](https://apis.io/examples/amazon-interactive-video-service/ivs-batch-start-viewer-session-revocation-viewer-session-list-example/)
+- [Ivs Channel Arn List Example](https://apis.io/examples/amazon-interactive-video-service/ivs-channel-arn-list-example/)
+- [Ivs Channel Example](https://apis.io/examples/amazon-interactive-video-service/ivs-channel-example/)
+- [Ivs Channel List Example](https://apis.io/examples/amazon-interactive-video-service/ivs-channel-list-example/)
+- [Ivs Channel Summary Example](https://apis.io/examples/amazon-interactive-video-service/ivs-channel-summary-example/)
+- [Ivs Channels Example](https://apis.io/examples/amazon-interactive-video-service/ivs-channels-example/)
+- [Ivs Create Channel Request Example](https://apis.io/examples/amazon-interactive-video-service/ivs-create-channel-request-example/)
+- [Ivs Create Channel Response Example](https://apis.io/examples/amazon-interactive-video-service/ivs-create-channel-response-example/)
+- [Ivs Create Recording Configuration Request Example](https://apis.io/examples/amazon-interactive-video-service/ivs-create-recording-configuration-request-example/)
+- [Ivs Create Recording Configuration Response Example](https://apis.io/examples/amazon-interactive-video-service/ivs-create-recording-configuration-response-example/)
+- [Ivs Create Stream Key Request Example](https://apis.io/examples/amazon-interactive-video-service/ivs-create-stream-key-request-example/)
+- [Ivs Create Stream Key Response Example](https://apis.io/examples/amazon-interactive-video-service/ivs-create-stream-key-response-example/)
+- [Ivs Delete Channel Request Example](https://apis.io/examples/amazon-interactive-video-service/ivs-delete-channel-request-example/)
+- …and 73 more published on APIs.io
+
+#### Collections (56)
+
+Postman and Open Collection request collections.
+
+- [Amazon Interactive Video Service BatchGetChannel API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-batchgetchannel-api/)
+- [Amazon Interactive Video Service BatchGetChannel BatchGetStreamKey API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-batchgetstreamkey-api/)
+- [Amazon Interactive Video Service BatchGetChannel BatchStartViewerSessionRevocation API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-batchstartviewersessionrevocation-api/)
+- [Amazon Interactive Video Service BatchGetChannel CreateChannel API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-createchannel-api/)
+- [Amazon Interactive Video Service BatchGetChannel CreateRecordingConfiguration API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-createrecordingconfiguration-api/)
+- [Amazon Interactive Video Service BatchGetChannel CreateStreamKey API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-createstreamkey-api/)
+- [Amazon Interactive Video Service BatchGetChannel DeleteChannel API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-deletechannel-api/)
+- [Amazon Interactive Video Service BatchGetChannel DeletePlaybackKeyPair API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-deleteplaybackkeypair-api/)
+- [Amazon Interactive Video Service BatchGetChannel DeleteRecordingConfiguration API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-deleterecordingconfiguration-api/)
+- [Amazon Interactive Video Service BatchGetChannel DeleteStreamKey API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-deletestreamkey-api/)
+- [Amazon Interactive Video Service BatchGetChannel GetChannel API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-getchannel-api/)
+- [Amazon Interactive Video Service BatchGetChannel GetPlaybackKeyPair API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-getplaybackkeypair-api/)
+- [Amazon Interactive Video Service BatchGetChannel GetRecordingConfiguration API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-getrecordingconfiguration-api/)
+- [Amazon Interactive Video Service BatchGetChannel GetStream API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-getstream-api/)
+- [Amazon Interactive Video Service BatchGetChannel GetStreamKey API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-getstreamkey-api/)
+- [Amazon Interactive Video Service BatchGetChannel GetStreamSession API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-getstreamsession-api/)
+- [Amazon Interactive Video Service BatchGetChannel ImportPlaybackKeyPair API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-importplaybackkeypair-api/)
+- [Amazon Interactive Video Service BatchGetChannel ListChannels API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-listchannels-api/)
+- [Amazon Interactive Video Service BatchGetChannel ListPlaybackKeyPairs API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-listplaybackkeypairs-api/)
+- [Amazon Interactive Video Service BatchGetChannel ListRecordingConfigurations API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-listrecordingconfigurations-api/)
+- [Amazon Interactive Video Service BatchGetChannel ListStreamKeys API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-liststreamkeys-api/)
+- [Amazon Interactive Video Service BatchGetChannel ListStreams API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-liststreams-api/)
+- [Amazon Interactive Video Service BatchGetChannel ListStreamSessions API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-liststreamsessions-api/)
+- [Amazon Interactive Video Service BatchGetChannel PutMetadata API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-putmetadata-api/)
+- [Amazon Interactive Video Service BatchGetChannel StartViewerSessionRevocation API](https://apis.io/collections/amazon-interactive-video-service/open-amazon-interactive-video-service-startviewersessionrevocation-api/)
+- …and 31 more published on APIs.io
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon Interactive Video Service — jsonschema rules](https://apis.io/rules/amazon-interactive-video-service/amazon-interactive-video-service-jsonschema-spectral-rules/)
+- [Amazon Interactive Video Service API Rules](https://apis.io/rules/amazon-interactive-video-service/amazon-interactive-video-service-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Interactive Video Service Authentication](https://apis.io/security/amazon-interactive-video-service/amazon-interactive-video-service-authentication/)
+- [Amazon Interactive Video Service Domain Security](https://apis.io/security/amazon-interactive-video-service/amazon-interactive-video-service-domain-security/)
+- [Amazon Interactive Video Service Trust Center](https://apis.io/security/amazon-interactive-video-service/amazon-interactive-video-service-trust-center/)
+- [Amazon Interactive Video Service Vulnerability Disclosure](https://apis.io/security/amazon-interactive-video-service/amazon-interactive-video-service-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Interactive Video Service Plans Pricing](https://apis.io/plans/amazon-interactive-video-service/amazon-interactive-video-service-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Interactive Video Service Rate Limits](https://apis.io/rate-limits/amazon-interactive-video-service/amazon-interactive-video-service-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Interactive Video Service Finops](https://apis.io/finops/amazon-interactive-video-service/amazon-interactive-video-service-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://aws.amazon.com/ivs/)
 - [Documentation](https://docs.aws.amazon.com/ivs/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
 - [Blog](https://aws.amazon.com/blogs/media/tag/amazon-interactive-video-service/)
-- [GitHubOrganization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/ivs/)
-- [SignUp](https://portal.aws.amazon.com/billing/signup)
-- [Login](https://signin.aws.amazon.com/)
-- [StatusPage](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Low Latency Streaming | Deliver live video with sub-second latency for real-time interactivity. |
-| Managed Infrastructure | AWS handles all the infrastructure complexity of live streaming at scale. |
-| Recording and Playback | Automatically record live streams to S3 and generate playback URLs. |
-| Chat Integration | Built-in chat messaging for interactive viewer experiences. |
+**Kin Score 53.4** — developing · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 59.3 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 58.3 |
+| Access clarity | 53.9 |
 
-| Name | Description |
-|------|-------------|
-| Interactive Gaming Streams | Build gaming livestreams with viewer interaction and real-time overlays. |
-| Virtual Events | Host virtual conferences, concerts, and events with large audiences. |
-| Social Commerce | Enable live shopping experiences with interactive product displays. |
+**Agent readiness 25.3** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| Amazon S3 | Stores live stream recordings automatically for on-demand playback. |
-| Amazon CloudFront | Distributes live streams globally with low latency. |
-| AWS Lambda | Triggers automation based on stream state changes and events. |
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-interactive-video-service/](https://apis.io/providers/amazon-interactive-video-service/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [AWS Amazon IVS API](openapi/amazon-ivs-openapi-original.yml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Interactive Video Service: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-109 schema files covering key resources and operations.
-
-### JSON Structure
-
-109 JSON Structure files converted from JSON Schema.
-
-### JSON-LD
-
-- [Amazon Interactive Video Service Context](json-ld/amazon-interactive-video-service-context.jsonld)
-
-### Examples
-
-109 example JSON files generated from schemas.
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [AWS Amazon IVS API](capabilities/shared/ivs.yaml) — operations for amazon interactive video service management
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Live Streaming Management](capabilities/live-streaming-management.yaml) | Amazon Interactive Video Service | 8 | Developer, Media Engineer |
-
-## Vocabulary
-
-- [Amazon Interactive Video Service Vocabulary](vocabulary/amazon-interactive-video-service-vocabulary.yaml) — Unified taxonomy mapping resources, actions, workflows, and personas
-
-## Rules
-
-- [Amazon Interactive Video Service Spectral Rules](rules/amazon-interactive-video-service-spectral-rules.yml) — 14 rules across 6 categories enforcing Amazon Interactive Video Service API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-interactive-video-service/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
