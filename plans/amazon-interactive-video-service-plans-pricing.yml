@@ -99,7 +99,7 @@ rate_limit_statements:
 - The maximum input for standard channel with Multitrack Video enabled is 15 Mbps and 1080p resolution
   (Full HD).
 x-canonical:
-  generated: '2026-11-01'
+  generated: '2026-11-02'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
